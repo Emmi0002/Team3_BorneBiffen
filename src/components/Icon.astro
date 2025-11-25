@@ -1,0 +1,27 @@
+---
+// Henter parametrene fra Astro.props
+const { link = "", fill = "outline", size = "medium", strokecolor = "negative" } = Astro.props;
+
+const fillClasses = {
+  solid: "var(--color-base-100)",
+  outline: "none",
+};
+
+const sizeClasses = {
+  small: "0 0 16 16",
+  medium: "0 0 20 20",
+  large: "0 0 24 24",
+  xlarge: "0 0 40 40",
+};
+
+const strokeClasses = {
+  primary: "text-[var(--color-primary)]",
+  secondary: "text-[var(--color-secondary)]",
+  negative: "text-[var(--color-base-100)]",
+};
+---
+
+<svg xmlns={link} fill={fillClasses[fill]} viewBox={sizeClasses[size]} stroke-width="2" stroke={strokeClasses[strokecolor]} class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z"></path>
+</svg>
