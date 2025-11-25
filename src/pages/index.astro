@@ -10,8 +10,50 @@ import CategoryCard from "../components/categorycard.astro";
 
 <MainLayout title="Titel">
   <main class="container mx-auto p-4">
-    <Heading htmlheading="h1">Lav noget flot!</Heading>
-    <Text teksttype="Body">Så bliver Anders glad:-)</Text>
+    <!-- Hero karousel sektion -->
+    <section
+      class="relative min-h-[400px] rounded-lg overflow-hidden"
+      x-data="{ currentSlide: 0, slides: [
+      { image: '/img/Mosterhero.webp', title: 'Moster Lea og hendes magiske verden', subtitle: 'Oplev eventyr med Moster Lea' },
+      { image: '/img/Ritahero.webp', title: 'Rita og Krokodillen', subtitle: 'Eventyr og venskab venter' },
+      { image: '/img/Villehero.webp', title: 'Ville og de magiske historier', subtitle: 'Oplev fantastiske eventyr' },
+      { image: '/img/vitellohero.webp', title: 'Vitello og vennerne', subtitle: 'Sjove historier for hele familien' }
+    ] }"
+      x-init="setInterval(() => { currentSlide = (currentSlide + 1) % slides.length }, 5000)"
+    >
+      <!-- Baggrundsbilleder karousel -->
+      <template x-for="(slide, index) in slides" :key="index">
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000" :class="{ 'opacity-100': currentSlide === index, 'opacity-0': currentSlide !== index }" :style="`background-image: url('${slide.image}')`"></div>
+      </template>
+
+      <!-- Statisk content der ligger ovenpå karousellen (centreret) -->
+      <div class="relative z-10 flex flex-col justify-center items-start h-full min-h-[400px] p-8 text-start">
+        <Heading htmlheading="h1" size="Large" color="label" weight="Bold">Lad trygt dit barn se film på Børnebiffen</Heading>
+        <Heading htmlheading="h2" size="Medium" color="label" weight="Light">Se et stort udvalg af klassiske danske børnefilm</Heading>
+        <button class="btn btn-primary mt-4">Opret profil</button>
+      </div>
+
+      <!-- Skiftende tekster nede i højre side -->
+      <div class="absolute bottom-8 right-8 z-10 text-right max-w-xs">
+        <template x-for="(slide, index) in slides" :key="index">
+          <div class="transition-opacity duration-1000" :class="{ 'opacity-100': currentSlide === index, 'opacity-0': currentSlide !== index }" x-show="currentSlide === index">
+            <h3 class="text-xl md:text-2xl font-bold mb-2 text-shadow-lg text-[var(--color-text-label)]" x-text="slide.title"></h3>
+            <p class="text-sm md:text-base font-light text-shadow-md text-[var(--color-text-label)]" x-text="slide.subtitle"></p>
+          </div>
+        </template>
+      </div>
+
+      <!-- Karousel indikatorer -->
+      <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+        <template x-for="(slide, index) in slides" :key="index">
+          <button class="w-3 h-3 rounded-full transition-colors duration-300" :class="{ 'bg-white': currentSlide === index, 'bg-white bg-opacity-50': currentSlide !== index }" @click="currentSlide = index"></button>
+        </template>
+      </div>
+    </section>
+
+    <div class="max-w-sm mx-auto my-8 text-center">
+      <img src="/img/Popcorn.webp" alt="Poppi figur" />
+    </div>
 
     <!-- Category Cards sektion -->
     <section class="my-8">
