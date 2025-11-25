@@ -6,123 +6,236 @@ import Link from "../components/Link.astro";
 import Button from "../components/Button.astro";
 import { Image } from "astro:assets";
 import thumbsup from "../assets/images/thumbsup.png";
+import Card from "../components/Card.astro";
 ---
 
 <MainLayout title="Titel">
   <main class="container mx-auto p-4">
-    <Heading htmlheading="h1" size="large">Komponentbibliotek</Heading>
-    <Text stylingclasses="italic">Her kan du finde alle de komponenter, der er brugt i dette projekt.</Text>
-    <hr class="my-4" />
+    <Heading htmlheading="h1" size="Large">Komponentbibliotek</Heading>
+    <Text stylingclasses="italic"
+      >Her kan du finde alle de komponenter, der er brugt i dette projekt.</Text
+    >
+    <hr class="my-8 border-[var(--color-primary-content)]" />
     <!-- start på typografi -->
     <section>
       <Heading htmlheading="h2" size="Medium">Typografi & overskrifter</Heading>
-      <Text>Her kan du finde alle de komponenter, der er brugt i dette projekt.</Text>
-
-      <!-- Heading eksempler -->
-      <div class="my-8">
-        <Heading htmlheading="h3" size="Small" weight="Bold">Overskrifter med forskellige weights:</Heading>
-        <Heading htmlheading="h1" size="Large" weight="Ekstrabold">h1 - Large - Ekstrabold</Heading>
-        <Heading htmlheading="h1" size="Large" weight="Bold">h1 - Large - Bold</Heading>
-        <Heading htmlheading="h1" size="Large" weight="Regular">h1 - Large - Regular</Heading>
-        <Heading htmlheading="h1" size="Large" weight="Light">h1 - Large - Light</Heading>
-
-        <Heading htmlheading="h2" size="Medium" weight="Ekstrabold">h2 - Medium - Ekstrabold</Heading>
-        <Heading htmlheading="h2" size="Medium" weight="Bold">h2 - Medium - Bold</Heading>
-        <Heading htmlheading="h2" size="Medium" weight="Regular">h2 - Medium - Regular</Heading>
-        <Heading htmlheading="h2" size="Medium" weight="Light">h2 - Medium - Light</Heading>
-
-        <Heading htmlheading="h3" size="Small" weight="Bold">h3 - Small - Bold</Heading>
-        <Heading htmlheading="h3" size="Small" weight="Regular">h3 - Small - Regular</Heading>
-        <Heading htmlheading="h4" size="Xsmall" weight="Bold">h4 - Xsmall - Bold</Heading>
-        <Heading htmlheading="h4" size="Xsmall" weight="Regular">h4 - Xsmall - Regular</Heading>
+      <Text
+        >Her kan du finde alle de komponenter, der er brugt i dette projekt.</Text
+      >
+      <div class="my-10">
+        <div class="my-5">
+          <Heading htmlheading="h3" size="Small" weight="Bold"
+            >Overskrifter med forskellige weights:</Heading
+          >
+        </div>
+        <Heading htmlheading="h1" size="Large" weight="Ekstrabold"
+          >h1 - Large - Ekstrabold</Heading
+        >
+        <Heading htmlheading="h1" size="Large" weight="Bold"
+          >h1 - Large - Bold</Heading
+        >
+        <Heading htmlheading="h1" size="Large" weight="Regular"
+          >h1 - Large - Regular</Heading
+        >
+        <Heading htmlheading="h1" size="Large" weight="Light"
+          >h1 - Large - Light</Heading
+        >
       </div>
 
-      <!-- Text komponenter med alle teksttyper -->
-      <div class="my-8">
-        <Heading htmlheading="h3" size="Small" weight="Bold">Text komponenter - alle teksttyper:</Heading>
-
-        <Text teksttype="Headline" weight="Regular">Headline - Regular: Lorem ipsum dolor sit amet consectetur.</Text>
-        <Text teksttype="Headline" weight="Bold">Headline - Bold: Lorem ipsum dolor sit amet consectetur.</Text>
-        <Text teksttype="Headline" weight="Light">Headline - Light: Lorem ipsum dolor sit amet consectetur.</Text>
-        <Text teksttype="Headline" weight="Ekstrabold">Headline - Ekstrabold: Lorem ipsum dolor sit amet consectetur.</Text>
-
-        <Text teksttype="Body" weight="Regular">Body - Regular: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam dolorem doloremque commodi eaque quisquam quasi recusandae veniam.</Text>
-        <Text teksttype="Body" weight="Bold">Body - Bold: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam dolorem doloremque commodi eaque quisquam quasi recusandae veniam.</Text>
-        <Text teksttype="Body" weight="Light">Body - Light: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam dolorem doloremque commodi eaque quisquam quasi recusandae veniam.</Text>
-        <Text teksttype="Body" weight="Ekstrabold">Body - Ekstrabold: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam dolorem doloremque commodi eaque quisquam quasi recusandae veniam.</Text>
-
-        <Text teksttype="Subtitle" weight="Regular">Subtitle - Regular: Lorem ipsum dolor sit amet consectetur adipisicing elit.</Text>
-        <Text teksttype="Subtitle" weight="Bold">Subtitle - Bold: Lorem ipsum dolor sit amet consectetur adipisicing elit.</Text>
-        <Text teksttype="Subtitle" weight="Light">Subtitle - Light: Lorem ipsum dolor sit amet consectetur adipisicing elit.</Text>
-        <Text teksttype="Subtitle" weight="Ekstrabold">Subtitle - Ekstrabold: Lorem ipsum dolor sit amet consectetur adipisicing elit.</Text>
-
-        <Text teksttype="Caption" weight="Regular">Caption - Regular: Lorem ipsum dolor sit amet consectetur.</Text>
-        <Text teksttype="Caption" weight="Bold">Caption - Bold: Lorem ipsum dolor sit amet consectetur.</Text>
-        <Text teksttype="Caption" weight="Light">Caption - Light: Lorem ipsum dolor sit amet consectetur.</Text>
-        <Text teksttype="Caption" weight="Ekstrabold">Caption - Ekstrabold: Lorem ipsum dolor sit amet consectetur.</Text>
-
-        <Text teksttype="Footnote" weight="Regular">Footnote - Regular: Lorem ipsum dolor sit amet.</Text>
-        <Text teksttype="Footnote" weight="Bold">Footnote - Bold: Lorem ipsum dolor sit amet.</Text>
-        <Text teksttype="Footnote" weight="Light">Footnote - Light: Lorem ipsum dolor sit amet.</Text>
-        <Text teksttype="Footnote" weight="Ekstrabold">Footnote - Ekstrabold: Lorem ipsum dolor sit amet.</Text>
+      <div class="my-10">
+        <Heading htmlheading="h2" size="Medium" weight="Ekstrabold"
+          >h2 - Medium - Ekstrabold</Heading
+        >
+        <Heading htmlheading="h2" size="Medium" weight="Bold"
+          >h2 - Medium - Bold</Heading
+        >
+        <Heading htmlheading="h2" size="Medium" weight="Regular"
+          >h2 - Medium - Regular</Heading
+        >
+        <Heading htmlheading="h2" size="Medium" weight="Light"
+          >h2 - Medium - Light</Heading
+        >
       </div>
 
-      <!-- Eksempel med links i tekst -->
-      <div class="my-8">
-        <Heading htmlheading="h3" size="Small" weight="Bold">Tekst med links:</Heading>
-        <Text teksttype="Body" weight="Regular">
-          Her er en Body tekst med Regular weight: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam dolorem doloremque commodi eaque <Link href="#">quisquam quasi</Link> recusandae veniam. Corporis totam reiciendis quibusdam ratione iure
-          aut, numquam tenetur voluptatem exercitationem sequi enim!
-        </Text>
+      <div class="my-10">
+        <Heading htmlheading="h3" size="Small" weight="Bold"
+          >h3 - Small - Bold</Heading
+        >
+        <Heading htmlheading="h3" size="Small" weight="Regular"
+          >h3 - Small - Regular</Heading
+        >
+        <Heading htmlheading="h4" size="Xsmall" weight="Bold"
+          >h4 - Xsmall - Bold</Heading
+        >
+        <Heading htmlheading="h4" size="Xsmall" weight="Regular"
+          >h4 - Xsmall - Regular</Heading
+        >
       </div>
     </section>
-    <!-- slut på typografi -->
-    <hr class="my-4" />
-    <!-- Link komponent instanser -->
-    <section>
-      <Heading htmlheading="h2" size="medium">Links</Heading>
-      <Text teksttype="brødtekst"><Link href="#">Default link: </Link>Default linket er en del af en tekst, og burde gerne fungere som et <Link href="#">link</Link> i en paragraf.</Text>
-      <Text><Link href="#" variant="primary">Link variant: primary</Link></Text>
-      <Text><Link href="#" variant="primary" size="small">Link variant: primary size small</Link></Text>
-      <Text><Link href="#" variant="primary" size="medium">Link variant: primary size medium</Link></Text>
-      <Text><Link href="#" variant="primary" size="large">Link variant: primary size large</Link></Text>
-      <Text><Link href="#" variant="secondary" size="small">Link variant: secondary size small</Link></Text>
-      <Text><Link href="#" variant="secondary" size="medium">Link variant: secondary size medium</Link></Text>
-      <Text><Link href="#" variant="secondary" size="large">Link variant: secondary size large</Link></Text>
-    </section>
-    <!-- Slut på Link komponent instanser -->
-    <hr class="my-4" />
-    <!-- Buttons komponent instanser -->
-    <section>
-      <Heading htmlheading="h2" size="medium">Buttons</Heading>
-      <Text><Button>Default knap</Button></Text>
-      <Text><Button variant="primary">Button variant: primary</Button></Text>
-      <Text><Button variant="primary" size="small">Button variant: primary size small</Button></Text>
-      <Text><Button variant="primary" size="medium">Button variant: primary size medium</Button></Text>
-      <Text><Button variant="primary" size="large">Button variant: primary size large</Button></Text>
-      <Text><Button variant="secondary" size="small">Button variant: secondary size small</Button></Text>
-      <Text><Button variant="secondary" size="medium">Button variant: secondary size medium</Button></Text>
-      <Text><Button variant="secondary" size="large">Variant: secondary size large</Button></Text>
-    </section>
-    <!-- Slut på Buttons komponent instanser -->
-    <section>
-      <button class="btn btn-xs">Xsmall</button>
-      <button class="btn btn-sm">Small</button>
-      <button class="btn">Medium</button>
-      <button class="btn btn-lg">Large</button>
-      <button class="btn btn-xl">Xlarge</button>
-      <div class="card bg-base-100 w-96 shadow-sm">
-        <figure>
-          <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Shoes" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">Card Title</h2>
-          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary">Buy Now</button>
+
+    <hr class="my-8 border-[var(--color-primary-content)]" />
+
+    <!-- Text komponenter med alle teksttyper -->
+
+    <section class="my-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-3">
+        <div>
+          <Text weight="Bold">Primary</Text>
+          <div class="flex flex-col gap-2 mt-2">
+            <Text
+              >xs: <button class="btn btn-primary btn-xs ml-2">P-xs</button
+              ></Text
+            >
+            <Text
+              >sm: <button class="btn btn-primary btn-sm ml-2">P-sm</button
+              ></Text
+            >
+            <Text>md: <button class="btn btn-primary ml-2">P-md</button></Text>
+            <Text
+              >lg: <button class="btn btn-primary btn-lg ml-2">P-lg</button
+              ></Text
+            >
+            <Text
+              >xl: <button class="btn btn-primary btn-xl ml-2">P-xl</button
+              ></Text
+            >
+          </div>
+        </div>
+
+        <div>
+          <Text weight="Bold">Secondary</Text>
+          <div class="flex flex-col gap-2 mt-2">
+            <Text
+              >xs: <button class="btn btn-secondary btn-xs ml-2">S-xs</button
+              ></Text
+            >
+            <Text
+              >sm: <button class="btn btn-secondary btn-sm ml-2">S-sm</button
+              ></Text
+            >
+            <Text>md: <button class="btn btn-secondary ml-2">S-md</button></Text
+            >
+            <Text
+              >lg: <button class="btn btn-secondary btn-lg ml-2">S-lg</button
+              ></Text
+            >
+            <Text
+              >xl: <button class="btn btn-secondary btn-xl ml-2">S-xl</button
+              ></Text
+            >
+          </div>
+        </div>
+
+        <div>
+          <Text weight="Bold">Accent</Text>
+          <div class="flex flex-col gap-2 mt-2">
+            <Text
+              >xs: <button class="btn btn-accent btn-xs ml-2">A-xs</button
+              ></Text
+            >
+            <Text
+              >sm: <button class="btn btn-accent btn-sm ml-2">A-sm</button
+              ></Text
+            >
+            <Text>md: <button class="btn btn-accent ml-2">A-md</button></Text>
+            <Text
+              >lg: <button class="btn btn-accent btn-lg ml-2">A-lg</button
+              ></Text
+            >
+            <Text
+              >xl: <button class="btn btn-accent btn-xl ml-2">A-xl</button
+              ></Text
+            >
+          </div>
+        </div>
+
+        <div>
+          <Text weight="Bold">Neutral</Text>
+          <div class="flex flex-col gap-2 mt-2">
+            <Text
+              >xs: <button class="btn btn-neutral btn-xs ml-2">N-xs</button
+              ></Text
+            >
+            <Text
+              >sm: <button class="btn btn-neutral btn-sm ml-2">N-sm</button
+              ></Text
+            >
+            <Text>md: <button class="btn btn-neutral ml-2">N-md</button></Text>
+            <Text
+              >lg: <button class="btn btn-neutral btn-lg ml-2">N-lg</button
+              ></Text
+            >
+            <Text
+              >xl: <button class="btn btn-neutral btn-xl ml-2">N-xl</button
+              ></Text
+            >
           </div>
         </div>
       </div>
+    </section>
+    <hr class="my-8 border-[var(--color-primary-content)]" />
+    <!-- Link komponent instanser -->
+    <section>
+      <Heading htmlheading="h2" size="Medium">Links</Heading>
+      <button class="btn btn-link">Link</button>
+    </section>
+
+    <hr class="my-8 border-[var(--color-primary-content)]" />
+    <!-- Buttons komponent instanser -->
+    <section>
+      <Heading htmlheading="h2" size="Medium"
+        >Buttons — daisyUI kombinationer</Heading
+      >
+
+      <!-- Variants -->
+      <div class="my-4">
+        <Heading htmlheading="h3" size="Small">Variants</Heading>
+        <div class="flex flex-wrap gap-3 mt-3">
+          <button class="btn btn-primary">Primary</button>
+          <button class="btn btn-secondary">Secondary</button>
+          <button class="btn btn-accent">Accent</button>
+          <button class="btn btn-neutral">Neutral</button>
+        </div>
+      </div>
+
+      <!-- Sizes -->
+      <div class="my-6">
+        <Heading htmlheading="h3" size="Small">Sizes</Heading>
+        <div class="flex items-center gap-3 mt-3">
+          <button class="btn btn-xs">btn-xs</button>
+          <button class="btn btn-sm">btn-sm</button>
+          <button class="btn">btn-md (default)</button>
+          <button class="btn btn-lg">btn-lg</button>
+          <button class="btn btn-xl">btn-xl</button>
+        </div>
+      </div>
+
+      <!-- Shapes -->
+      <div class="my-6">
+        <Heading htmlheading="h3" size="Small">Shapes</Heading>
+        <div class="flex items-center gap-3 mt-3">
+          <button class="btn btn-primary">Default</button>
+          <button class="btn btn-primary rounded-full"
+            >Pill (rounded-full)</button
+          >
+        </div>
+      </div>
+
+      <hr class="my-8 border-[var(--color-primary-content)]" />
+
+      <section>
+        <Heading htmlheading="h2" size="Medium">Badge</Heading>
+        <div class="badge badge-secondary border-neutral">Badge</div>
+      </section>
+
+      <hr class="my-8 border-[var(--color-primary-content)]" />
+      <!-- card -->
+      <section>
+        <Heading htmlheading="h2" size="Medium">Card</Heading>
+        <div>
+          <Card />
+        </div>
+      </section>
     </section>
   </main>
 </MainLayout>
