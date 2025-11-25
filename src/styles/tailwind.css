@@ -1,50 +1,87 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin '@tailwindcss/typography';
 @plugin '@tailwindcss/forms';
 @import "tailwindcss-animated";
 @import "tailwindcss-intersect";
+@plugin 'daisyui';
 
 @font-face {
-  font-family: 'Honk';
-  src: url('/fonts/Honk-Regular-VariableFont_MORF,SHLN.ttf') format('truetype');
+  font-family: "MerriweatherSansLight";
+  src: url("/fonts/MerriweatherSans-Light.woff2") format("woff2"), url("/fonts/MerriweatherSans-Light.woff") format("woff"), url("/fonts/MerriweatherSans-Light.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: 'Quicksand';
-  src: url('/fonts/Quicksand-VariableFont_wght.ttf') format('truetype');
+  font-family: "MerriweatherSansRegular";
+  src: url("/fonts/MerriweatherSans-Regular.woff2") format("woff2"), url("/fonts/MerriweatherSans-Regular.woff") format("woff"), url("/fonts/MerriweatherSans-Regular.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: 'Domine';
-  src: url('/fonts/Domine-Regular.ttf') format('truetype');
+  font-family: "MerriweatherSanBold";
+  src: url("/fonts/MerriweatherSans-Bold.woff2") format("woff2"), url("/fonts/MerriweatherSans-Bold.woff") format("woff"), url("/fonts/MerriweatherSans-Bold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MerriweatherSansExtraBold";
+  src: url("/fonts/MerriweatherSans-ExtraBold.woff2") format("woff2"), url("/fonts/MerriweatherSans-ExtraBold.woff") format("woff"), url("/fonts/MerriweatherSans-ExtraBold.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
 }
 
 @theme {
-  /* Her tilføjes theme variable // tokens */
-
-  /*Farver */
-  --color-primary-400: #00E4F5;
-  --color-primary-500: #006269;
-  --color-primary-600: #006D75;
-  --color-secondary-400: #F5E400;
-  --color-secondary-500: #F5A600;
-  --color-secondary-600: #F57A00;
-
-  /*Typografi */
-  --font-display: 'Honk', monospace;
-  --font-sans: 'Quicksand', sans-serif;
-  --font-serif: 'Domine', serif;
+  --color-text-label: #572d75;
+  /* typografi - nu bruger alle samme font-family med forskellige weights */
+  --font-ekstrabold: "MerriweatherSansExtraBold", sans-serif;
+  --font-bold: "MerriweatherSanBold", sans-serif;
+  --font-regular: "MerriweatherSansRegular", sans-serif;
+  --font-light: "MerriweatherSansLight", sans-serif;
 }
 
+@plugin "daisyui/theme" {
+  name: "BoerneBiffen";
+  default: true;
+  prefersdark: false;
+  color-scheme: "light";
+  --color-base-100: #e8e8e8;
+  --color-base-200: #371a4c;
+  --color-base-300: #c1a0e1;
+  --color-base-content: #181818;
+  --color-primary: #8447af;
+  --color-primary-content: #e8e8e8;
+  --color-secondary: #ff7f0f;
+  --color-secondary-content: #e8e8e8;
+  --color-accent: #fff4f1;
+  --color-accent-content: #ff7f0f;
+  --color-neutral: #e8e8e8;
+  --color-neutral-content: #181818;
+  --color-info: #02b7fb;
+  --color-info-content: oklch(29% 0.066 243.157);
+  --color-success: #a4b5a5;
+  --color-success-content: #181818;
+  --color-warning: #c9bd70;
+  --color-warning-content: oklch(28% 0.066 53.813);
+  --color-error: #ff78ff;
+  --color-error-content: oklch(27% 0.105 12.094);
+  --radius-selector: 2rem;
+  --radius-field: 1rem;
+  --radius-box: 0.5rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 1;
+}
 @layer base {
-
 }
 
-@layer components{
-
+@layer components {
 }
 
-@layer utilities{
-  
+@layer utilities {
 }
