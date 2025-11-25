@@ -6,6 +6,7 @@
 @import "tailwindcss-intersect";
 @plugin 'daisyui';
 
+
 @font-face {
   font-family: "MerriweatherSansLight";
   src: url("/fonts/MerriweatherSans-Light.woff2") format("woff2"), url("/fonts/MerriweatherSans-Light.woff") format("woff"), url("/fonts/MerriweatherSans-Light.ttf") format("truetype");
@@ -37,6 +38,8 @@
 :root {
   --spacing-horizontal: 16px;
   --spacing-vertical: 8px;
+  --spacing-large: 24px;
+  --margin-side: 50px;
 }
 
 @theme {

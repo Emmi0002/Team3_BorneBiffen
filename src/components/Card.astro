@@ -1,7 +1,6 @@
 ---
 import Text from "./Text.astro";
 import Icon from "./Icon.astro";
-import HeartToggle from "./HeartToggle.astro";
 
 const {
   title = "Card Title",
@@ -16,17 +15,15 @@ const {
 ---
 
 <div
-  class="card bg-base-100 w-96 shadow-sm hover:bg-[var(--color-primary)] transition-colors duration-200"
+  class="card bg-base-100 w-full shadow-sm hover:bg-[var(--color-primary)] transition-colors duration-200 flex flex-col overflow-hidden"
 >
   <figure class="relative">
-    <img src={imgSrc} alt={imgAlt} />
+    <img src={imgSrc} alt={imgAlt} class="w-full h-44 object-cover" />
 
-    <!-- PLAY ICON CENTER -->
     <div class="absolute inset-0 flex items-center justify-center">
       <Icon imgDefault="/img/icons/playnegative.webp" size="xl" />
     </div>
 
-    <!-- HEART ICON TOP-LEFT -->
     <div class="absolute top-2 right-2">
       <Icon imgDefault="/img/icons/heart.webp" size="xl" />
     </div>
@@ -34,16 +31,17 @@ const {
 
   <div class="card-body">
     <Text teksttype="Headline" weight="Bold" color="body">{title}</Text>
-    <Text teksttype="Body" color="body">{body}</Text>
+    <Text teksttype="Body" color="body" stylingclasses="line-clamp-2"
+      >{body}</Text
+    >
   </div>
-
   <div
-    class="card-actions flex items-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical)]"
+    class="card-actions flex items-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical)] mt-auto"
   >
     {badgestate === "true" && <div class={badgeClass}>{badge}</div>}
 
     <div class="flex items-center gap-2 ml-auto">
-      <Text color="body">{duration}</Text>
+      <Text teksttype="Caption" color="body">{duration}</Text>
       <Icon imgDefault="/img/icons/clock.webp" />
     </div>
   </div>

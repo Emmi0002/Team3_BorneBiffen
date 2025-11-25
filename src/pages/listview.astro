@@ -1,0 +1,60 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Card from "../components/Card.astro";
+---
+
+<MainLayout title="Børnebiffen - Listevisning">
+  <main>
+    <section
+      class="grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(180px,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-[var(--spacing-large)] p-4 lg:mx-[var(--margin-side)]"
+    >
+      <!-- Indsæt så mange kort du vil — gridet ordner resten -->
+      <Card
+        imgSrc="/img/VilleogVildeKanin.webp"
+        imgAlt="Ville og Vilde Kanin"
+        badgestate="true"
+        badge="Venskab"
+        duration="29 min"
+        title="Ville og Vilde Kanin"
+        body="Ville er en lille hvid kanin, der bor i et bur på en bondegård, hvor han har det godt og trygt. Men en dag er buret ikke blevet låst, og Ville falder ud. Skal han kravle op igen, eller skal han hellere hoppe ud og se, hvordan der er ude i skoven?"
+      />
+      <Card
+        imgSrc="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+        badgestate="true"
+        badge="Anbefalet"
+      />
+      <Card
+        imgSrc="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+        badgestate="true"
+        badge="Anbefalet"
+      />
+      <Card
+        imgSrc="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+        badgestate="true"
+        badge="Anbefalet"
+      />
+
+      <!-- Du kan bare blive ved -->
+      <Card
+        imgSrc="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+        badgestate="true"
+        badge="Anbefalet"
+      />
+      <Card
+        imgSrc="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+        badgestate="true"
+        badge="Anbefalet"
+      />
+      <Card
+        imgSrc="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+        badgestate="true"
+        badge="Anbefalet"
+      />
+      <Card
+        imgSrc="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+        badgestate="true"
+        badge="Anbefalet"
+      />
+    </section>
+  </main>
+</MainLayout>
