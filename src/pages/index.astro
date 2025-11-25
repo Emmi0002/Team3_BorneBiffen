@@ -5,7 +5,6 @@ import { Image } from "astro:assets";
 import thumbsup from "../assets/images/thumbsup.png";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
-import Button from "../components/Button.astro";
 import CategoryCard from "../components/categorycard.astro";
 ---
 
@@ -18,7 +17,25 @@ import CategoryCard from "../components/categorycard.astro";
     <section class="my-8">
       <Heading htmlheading="h2" size="Medium">Kategorier</Heading>
 
-      <CategoryCard imageSrc="/img/Rita.webp" imageAlt="Thumbs up" label="Kategori 1" />
+      <!-- Desktop grid (hidden på mobil) -->
+      <div class="hidden sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+        <CategoryCard imageSrc="/img/venskab.webp" imageAlt="personer krammer" label="Venskab" />
+        <CategoryCard imageSrc="/img/dyr.webp" imageAlt="ugler" label="Film med Dyr" />
+        <CategoryCard imageSrc="/img/kaerlighed.webp" imageAlt="to hjerter" label="Kærlighed" />
+        <CategoryCard imageSrc="/img/magi.webp" imageAlt="troldmand" label="Magiske film" />
+      </div>
+
+      <!-- Mobil karousel (kun synlig på mobil) -->
+      <div class="sm:hidden mt-4">
+        <div class="overflow-x-auto">
+          <div class="flex gap-4 pb-4" style="width: max-content;">
+            <CategoryCard imageSrc="/img/venskab.webp" imageAlt="personer krammer" label="Venskab" stylingClasses="flex-shrink-0" />
+            <CategoryCard imageSrc="/img/dyr.webp" imageAlt="ugler" label="Film med Dyr" stylingClasses="flex-shrink-0" />
+            <CategoryCard imageSrc="/img/kaerlighed.webp" imageAlt="to hjerter" label="Kærlighed" stylingClasses="flex-shrink-0" />
+            <CategoryCard imageSrc="/img/magi.webp" imageAlt="troldmand" label="Magiske film" stylingClasses="flex-shrink-0" />
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 </MainLayout>
