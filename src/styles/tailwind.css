@@ -34,6 +34,11 @@
   font-style: normal;
 }
 
+:root {
+  --spacing-horizontal: 16px;
+  --spacing-vertical: 8px;
+}
+
 @theme {
   --color-text-label: #572d75;
   /* typografi - nu bruger alle samme font-family med forskellige weights */
@@ -41,6 +46,9 @@
   --font-bold: "MerriweatherSanBold", sans-serif;
   --font-regular: "MerriweatherSansRegular", sans-serif;
   --font-light: "MerriweatherSansLight", sans-serif;
+
+  /* spacing */
+  
 }
 
 @plugin "daisyui/theme" {

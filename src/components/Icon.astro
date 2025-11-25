@@ -1,27 +1,34 @@
 ---
-// Henter parametrene fra Astro.props
-const { link = "", fill = "outline", size = "medium", strokecolor = "negative" } = Astro.props;
+const {
+  imgDefault,
+  imgHover = null,
+  alt = "icon",
+  size = "medium",
+} = Astro.props;
 
-const fillClasses = {
-  solid: "var(--color-base-100)",
-  outline: "none",
+const sizeMap = {
+  small: "w-4 h-4", // 16px
+  medium: "w-5 h-5", // 20px
+  large: "w-6 h-6", // 24px
+  xl: "w-10 h-10", // 40px
 };
 
-const sizeClasses = {
-  small: "0 0 16 16",
-  medium: "0 0 20 20",
-  large: "0 0 24 24",
-  xlarge: "0 0 40 40",
-};
-
-const strokeClasses = {
-  primary: "text-[var(--color-primary)]",
-  secondary: "text-[var(--color-secondary)]",
-  negative: "text-[var(--color-base-100)]",
-};
+const iconSize = sizeMap[size] ?? sizeMap.medium;
 ---
 
-<svg xmlns={link} fill={fillClasses[fill]} viewBox={sizeClasses[size]} stroke-width="2" stroke={strokeClasses[strokecolor]} class="size-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-  <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z"></path>
-</svg>
+<div class={`relative inline-block ${iconSize} group`}>
+  <img
+    src={imgDefault}
+    alt={alt}
+    class={`absolute inset-0 object-contain transition-opacity duration-200 ${imgHover ? "opacity-100 group-hover:opacity-0" : ""}`}
+  />
+  {
+    imgHover && (
+      <img
+        src={imgHover}
+        alt={alt}
+        class="absolute inset-0 object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+      />
+    )
+  }
+</div>
