@@ -1,20 +1,10 @@
 ---
-const {
-  imgDefault,
-  imgHover = null,
-  alt = "icon",
-  size = "medium",
-} = Astro.props;
-
-const sizeMap = {
-  small: "w-4 h-4", // 16px
-  medium: "w-5 h-5", // 20px
-  large: "w-6 h-6", // 24px
-  xl: "w-10 h-10", // 40px
-};
+const { icon = "", size = "medium", strokecolor = "negative" } = Astro.props;
 
 const iconSize = sizeMap[size] ?? sizeMap.medium;
 ---
+
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox={sizeClasses[size]} stroke-width="2" class={`size-6 ${strokeClasses[strokecolor]}`} {...{ innerHTML: icon }}></svg>
 
 <div class={`relative inline-block ${iconSize} group`}>
   <img
