@@ -6,12 +6,18 @@ import Card from "../components/Card.astro";
 
 <MainLayout title="Børnebiffen - Listevisning">
   <main class="mt-10">
+    <img
+      src="/img/Popcorn.webp"
+      alt=""
+      class="absolute -right-25 top-25 h-full w-auto max-w-80 max-h-80 rotate-[-35deg] md:block hidden"
+    />
+
     <section
       class="mx-[var(--margin-side-small)] md:mx-[var(--margin-side-large)]"
     >
       <Heading htmlheading="h1" size="Large">Alle film</Heading>
       <div
-        class="my-[var(--spacing-large)] flex flex-wrap gap-[var(--spacing-component-token)]"
+        class="my-[var(--spacing-large)] flex flex-wrap gap-[var(--spacing-component-token)] md:pr-50"
       >
         <button class="btn btn-secondary btn-soft rounded-full">
           Vinter
