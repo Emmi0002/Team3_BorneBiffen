@@ -35,10 +35,26 @@
 }
 
 :root {
+  /* spacing */
   --spacing-horizontal: 16px;
   --spacing-vertical: 8px;
+  --spacing-horizontal-m: 20px;
+  --spacing-vertical-m: 12px;
+  --spacing-horizontal-l: 24px;
+  --spacing-vertical-l: 16px;
   --spacing-large: 24px;
-  --margin-side: 50px;
+  --spacing-component-token: 12px;
+  --margin-side-large: 50px;
+    --margin-side-small: 20px;
+
+  /* radius */
+  --radius-xs: 4px;
+  --radius-s: 6px;
+  --radius-m: 8px;
+  --radius-l: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px; 
+
 }
 
 @theme {
