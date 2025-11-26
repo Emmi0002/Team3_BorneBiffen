@@ -6,7 +6,6 @@
 @import "tailwindcss-intersect";
 @plugin 'daisyui';
 
-
 @font-face {
   font-family: "MerriweatherSansLight";
   src: url("/fonts/MerriweatherSans-Light.woff2") format("woff2"), url("/fonts/MerriweatherSans-Light.woff") format("woff"), url("/fonts/MerriweatherSans-Light.ttf") format("truetype");
@@ -52,7 +51,6 @@
   --font-light: "MerriweatherSansLight", sans-serif;
 
   /* spacing */
-  
 }
 
 @plugin "daisyui/theme" {
@@ -93,6 +91,165 @@
 }
 
 @layer components {
+  /* CSS-only hero karousel - rettede selectors */
+  #slide1:checked ~ div:nth-of-type(1) {
+    opacity: 1;
+  }
+
+  #slide2:checked ~ div:nth-of-type(2) {
+    opacity: 1;
+  }
+
+  #slide3:checked ~ div:nth-of-type(3) {
+    opacity: 1;
+  }
+
+  #slide4:checked ~ div:nth-of-type(4) {
+    opacity: 1;
+  }
+
+  #slide5:checked ~ div:nth-of-type(5) {
+    opacity: 1;
+  }
+
+  /* Skiftende tekster */
+  #slide1:checked ~ div:last-child .hero-text:nth-child(1),
+  #slide2:checked ~ div:last-child .hero-text:nth-child(2),
+  #slide3:checked ~ div:last-child .hero-text:nth-child(3),
+  #slide4:checked ~ div:last-child .hero-text:nth-child(4),
+  #slide5:checked ~ div:last-child .hero-text:nth-child(5) {
+    opacity: 1;
+  }
+
+  /* Aktive indikatorer */
+  #slide1:checked ~ div:last-of-type label[for="slide1"],
+  #slide2:checked ~ div:last-of-type label[for="slide2"],
+  #slide3:checked ~ div:last-of-type label[for="slide3"],
+  #slide4:checked ~ div:last-of-type label[for="slide4"],
+  #slide5:checked ~ div:last-of-type label[for="slide5"] {
+    background-color: white;
+  }
+
+  /* Text shadow for bedre læsbarhed */
+  .text-shadow-lg {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  .text-shadow-md {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  }
+
+  /* Hero carousel navigation dots - bliver lilla når slide er aktiv */
+  #slide1:target ~ div .hero-nav-dot[href="#slide1"],
+  #slide2:target ~ div .hero-nav-dot[href="#slide2"],
+  #slide3:target ~ div .hero-nav-dot[href="#slide3"],
+  #slide4:target ~ div .hero-nav-dot[href="#slide4"],
+  #slide5:target ~ div .hero-nav-dot[href="#slide5"] {
+    background-color: var(--color-primary) !important;
+    opacity: 1 !important;
+  }
+
+  /* Første dot aktiv som standard */
+  .hero-nav-dot[href="#slide1"] {
+    background-color: var(--color-primary);
+    opacity: 1;
+  }
+
+  /* Auto-sliding carousel animations */
+  @keyframes slideshow {
+    0% {
+      opacity: 1;
+    }
+    20% {
+      opacity: 1;
+    }
+    25% {
+      opacity: 0;
+    }
+    95% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes dotActive {
+    0% {
+      background-color: var(--color-primary);
+      opacity: 1;
+    }
+    20% {
+      background-color: var(--color-primary);
+      opacity: 1;
+    }
+    25% {
+      background-color: white;
+      opacity: 0.5;
+    }
+    95% {
+      background-color: white;
+      opacity: 0.5;
+    }
+    100% {
+      background-color: var(--color-primary);
+      opacity: 1;
+    }
+  }
+
+  /* Slide animations - hver slide varer 4 sekunder, total 20 sekunder */
+  .animate-slide1 {
+    animation: slideshow 20s infinite;
+    animation-delay: 0s;
+  }
+
+  .animate-slide2 {
+    animation: slideshow 20s infinite;
+    animation-delay: 4s;
+  }
+
+  .animate-slide3 {
+    animation: slideshow 20s infinite;
+    animation-delay: 8s;
+  }
+
+  .animate-slide4 {
+    animation: slideshow 20s infinite;
+    animation-delay: 12s;
+  }
+
+  .animate-slide5 {
+    animation: slideshow 20s infinite;
+    animation-delay: 16s;
+  }
+
+  /* Navigation dot animations */
+  .animate-dot1 {
+    animation: dotActive 20s infinite;
+    animation-delay: 0s;
+    background-color: var(--color-primary);
+    opacity: 1;
+  }
+
+  .animate-dot2 {
+    animation: dotActive 20s infinite;
+    animation-delay: 4s;
+  }
+
+  .animate-dot3 {
+    animation: dotActive 20s infinite;
+    animation-delay: 8s;
+  }
+
+  .animate-dot4 {
+    animation: dotActive 20s infinite;
+    animation-delay: 12s;
+  }
+
+  .animate-dot5 {
+    animation: dotActive 20s infinite;
+    animation-delay: 16s;
+  }
 }
 
 @layer utilities {
