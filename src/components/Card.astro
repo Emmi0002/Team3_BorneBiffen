@@ -1,26 +1,54 @@
 ---
 import Text from "./Text.astro";
+import Icon from "./Icon.astro";
+
+const {
+  title = "Card Title",
+  body = "A card component has a figure, a body part, and inside body there are title and actions parts",
+  duration = "Varighed",
+  badge = "Badge",
+  imgSrc = "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
+  imgAlt = "Image",
+  badgeClass = "badge badge-secondary border-neutral",
+  badgestate = "false",
+} = Astro.props;
 ---
 
-<div class="card bg-base-100 w-96 shadow-sm">
-  <figure>
-    <img
-      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-      alt="Shoes"
-    />
+<div
+  class="card bg-base-100 w-full max-w-[30rem] shadow-sm hover:bg-[var(--color-primary)] transition-colors duration-200 flex flex-col overflow-hidden"
+>
+  <figure class="relative">
+    <img src={imgSrc} alt={imgAlt} class="w-full h-44 object-cover" />
+
+    <div class="absolute inset-0 flex items-center justify-center">
+      <Icon imgDefault="/img/icons/playnegative.webp" size="xl" />
+    </div>
+
+    <div class="absolute top-2 right-2">
+      <Icon imgDefault="/img/icons/heart.webp" size="xl" />
+    </div>
   </figure>
+
   <div class="card-body">
-    <h2 class="card-title">Card Title</h2>
-    <p>
-      A card component has a figure, a body part, and inside body there are
-      title and actions parts
-    </p>
-    <div class="card-actions justify-between">
-      <div class="badge badge-secondary border-neutral">Badge</div>
-      <div class="flex items-center gap-1">
-        <Text color="body">Varighed</Text>
-        <div>Icon</div>
-      </div>
+    <Text teksttype="Headline" weight="Bold" color="body">{title}</Text>
+    <Text
+      teksttype="Body"
+      color="body"
+      stylingclasses="line-clamp-2 max-h-[3rem] overflow-hidden">{body}</Text
+    >
+  </div>
+  <div
+    class="card-actions flex items-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical)] mt-auto"
+  >
+    {
+      badgestate === "true" && (
+        <div class={`${badgeClass} font-bold`}>{badge}</div>
+      )
+    }
+
+    <div class="flex items-center gap-2 ml-auto">
+      <Text teksttype="Caption" weight="Bold" color="body">{duration}</Text>
+      <Icon imgDefault="/img/icons/clock.webp" />
     </div>
   </div>
 </div>

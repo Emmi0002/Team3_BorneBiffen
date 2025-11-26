@@ -34,6 +34,29 @@
   font-style: normal;
 }
 
+:root {
+  /* spacing */
+  --spacing-horizontal: 16px;
+  --spacing-vertical: 8px;
+  --spacing-horizontal-m: 20px;
+  --spacing-vertical-m: 12px;
+  --spacing-horizontal-l: 24px;
+  --spacing-vertical-l: 16px;
+  --spacing-large: 24px;
+  --spacing-component-token: 12px;
+  --margin-side-large: 50px;
+    --margin-side-small: 20px;
+
+  /* radius */
+  --radius-xs: 4px;
+  --radius-s: 6px;
+  --radius-m: 8px;
+  --radius-l: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px; 
+
+}
+
 @theme {
   --color-text-label: #572d75;
   --color-surface-subtle: #efe8f8;
@@ -42,6 +65,8 @@
   --font-bold: "MerriweatherSanBold", sans-serif;
   --font-regular: "MerriweatherSansRegular", sans-serif;
   --font-light: "MerriweatherSansLight", sans-serif;
+
+  /* spacing */
 }
 
 @plugin "daisyui/theme" {
@@ -82,6 +107,90 @@
 }
 
 @layer components {
+  /* Auto-sliding karousel - matcher eksisterende HTML struktur */
+  .animate-slide1 {
+    animation: slide 20s infinite;
+    animation-delay: 0s;
+  }
+
+  .animate-slide2 {
+    animation: slide 20s infinite;
+    animation-delay: 4s;
+  }
+
+  .animate-slide3 {
+    animation: slide 20s infinite;
+    animation-delay: 8s;
+  }
+
+  .animate-slide4 {
+    animation: slide 20s infinite;
+    animation-delay: 12s;
+  }
+
+  .animate-slide5 {
+    animation: slide 20s infinite;
+    animation-delay: 16s;
+  }
+
+  /* Navigation dots animationer */
+  .animate-dot1 {
+    animation: dotActive 20s infinite;
+    animation-delay: 0s;
+    background-color: var(--color-primary) !important;
+    opacity: 1;
+  }
+
+  .animate-dot2 {
+    animation: dotActive 20s infinite;
+    animation-delay: 4s;
+  }
+
+  .animate-dot3 {
+    animation: dotActive 20s infinite;
+    animation-delay: 8s;
+  }
+
+  .animate-dot4 {
+    animation: dotActive 20s infinite;
+    animation-delay: 12s;
+  }
+
+  .animate-dot5 {
+    animation: dotActive 20s infinite;
+    animation-delay: 16s;
+  }
+
+  @keyframes slide {
+    0%,
+    20% {
+      opacity: 1;
+    }
+    25%,
+    95% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes dotActive {
+    0%,
+    20% {
+      background-color: var(--color-primary);
+      opacity: 1;
+    }
+    25%,
+    95% {
+      background-color: white;
+      opacity: 0.5;
+    }
+    100% {
+      background-color: var(--color-primary);
+      opacity: 1;
+    }
+  }
 }
 
 @layer utilities {
