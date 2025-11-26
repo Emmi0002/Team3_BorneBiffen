@@ -6,9 +6,12 @@ import thumbsup from "../assets/images/thumbsup.png";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import CategoryCard from "../components/categorycard.astro";
+import Appsection from "../components/appsection.astro";
+import Button from "../components/Button.astro";
 ---
 
 <MainLayout title="Titel">
+  <main class="container mx-auto"></main>
   <!-- Hero karousel sektion - CSS Auto-sliding Carousel - Full Width -->
   <section class="relative min-h-[400px] w-full">
     <div class="carousel-container w-full h-100 md:h-130 lg:h-160 relative">
@@ -77,31 +80,36 @@ import CategoryCard from "../components/categorycard.astro";
       <img src="/img/Popcorn.webp" alt="Poppi figur" class="w-full h-full object-contain scale-x-[-1]" />
     </div>
   </section>
+  <!-- App sektion -->
+  <section class="mt-30 text-center">
+    <Heading htmlheading="h2" size="Medium" weight="Bold" class="text-center">Alle dine yndlingsfilm - Nu også på app</Heading>
+    <Appsection />
+    <Heading htmlheading="h3" size="Small" weight="Light" class="text-center mb-8">Giv børnene frihed til at gå på opdagelse</Heading>
+    <button class="btn btn-primary mt-4">Download appen</button>
+  </section>
 
-  <main class="container mx-auto">
-    <!-- Category Cards sektion -->
-    <section class="my-24">
-      <Heading htmlheading="h2" size="Medium">Kategorier</Heading>
+  <!-- Category Cards sektion -->
+  <section class="my-24">
+    <Heading htmlheading="h2" size="Medium">Kategorier</Heading>
 
-      <!-- Desktop grid (hidden på mobil) -->
-      <div class="hidden sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
-        <CategoryCard imageSrc="/img/venskab.webp" imageAlt="personer krammer" label="Venskab" />
-        <CategoryCard imageSrc="/img/dyr.webp" imageAlt="ugler" label="Film med Dyr" />
-        <CategoryCard imageSrc="/img/kaerlighed.webp" imageAlt="to hjerter" label="Kærlighed" />
-        <CategoryCard imageSrc="/img/magi.webp" imageAlt="troldmand" label="Magiske film" />
-      </div>
+    <!-- Desktop grid (hidden på mobil) -->
+    <div class="hidden sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+      <CategoryCard imageSrc="/img/venskab.webp" imageAlt="personer krammer" label="Venskab" />
+      <CategoryCard imageSrc="/img/dyr.webp" imageAlt="ugler" label="Film med Dyr" />
+      <CategoryCard imageSrc="/img/kaerlighed.webp" imageAlt="to hjerter" label="Kærlighed" />
+      <CategoryCard imageSrc="/img/magi.webp" imageAlt="troldmand" label="Magiske film" />
+    </div>
 
-      <!-- Mobil karousel (kun synlig på mobil) -->
-      <div class="sm:hidden mt-4">
-        <div class="overflow-x-auto">
-          <div class="flex gap-4 pb-4" style="width: max-content;">
-            <CategoryCard imageSrc="/img/venskab.webp" imageAlt="personer krammer" label="Venskab" stylingClasses="flex-shrink-0" />
-            <CategoryCard imageSrc="/img/dyr.webp" imageAlt="ugler" label="Film med Dyr" stylingClasses="flex-shrink-0" />
-            <CategoryCard imageSrc="/img/kaerlighed.webp" imageAlt="to hjerter" label="Kærlighed" stylingClasses="flex-shrink-0" />
-            <CategoryCard imageSrc="/img/magi.webp" imageAlt="troldmand" label="Magiske film" stylingClasses="flex-shrink-0" />
-          </div>
+    <!-- Mobil karousel (kun synlig på mobil) -->
+    <div class="sm:hidden mt-4">
+      <div class="overflow-x-auto">
+        <div class="flex gap-4 pb-4" style="width: max-content;">
+          <CategoryCard imageSrc="/img/venskab.webp" imageAlt="personer krammer" label="Venskab" stylingClasses="flex-shrink-0" />
+          <CategoryCard imageSrc="/img/dyr.webp" imageAlt="ugler" label="Film med Dyr" stylingClasses="flex-shrink-0" />
+          <CategoryCard imageSrc="/img/kaerlighed.webp" imageAlt="to hjerter" label="Kærlighed" stylingClasses="flex-shrink-0" />
+          <CategoryCard imageSrc="/img/magi.webp" imageAlt="troldmand" label="Magiske film" stylingClasses="flex-shrink-0" />
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 </MainLayout>
