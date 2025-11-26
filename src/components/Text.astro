@@ -3,7 +3,7 @@
 const {
   teksttype = "",
   stylingclasses = "",
-  weight = "",
+  weight = "Regular",
   color = "negative",
 } = Astro.props;
 
@@ -13,14 +13,14 @@ const sizeClasses = {
   Body: "text-[12px] md:text-[13px] lg:text-[16px]",
   Subtitle: "text-[11px] md:text-[11px] lg:text-[14px]",
   Caption: "text-[12px] md:text-[12px] lg:text-[13px]",
-  Footnote: "text-[12px] md:text-[12px] lg:text-[12px]",
+  Footnote: "text-[12px] md:text-[12px] lg:text-[12px] uppercase",
 };
 
 const typeClasses = {
-  Bold: "font-[var(--font-bold)]",
-  Light: "font-[var(--font-light)]",
-  Regular: "font-[var(--font-regular)]",
-  Ekstrabold: "font-[var(--font-ekstrabold)]",
+  Light: "font-light font-['MerriweatherSansLight']",
+  Regular: "font-regular font-['MerriweatherSansRegular']",
+  Bold: "font-bold font-['MerriweatherSanBold']",
+  Ekstrabold: "font-ekstrabold font-['MerriweatherSansExtraBold']",
 };
 
 const colorClasses = {

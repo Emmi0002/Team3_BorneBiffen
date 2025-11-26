@@ -1,7 +1,46 @@
 ---
+import Text from "./Text.astro";
+import Link from "./Link.astro";
 ---
-<footer class="bg-primary-500 text-white">
-    <div class="container mx-auto p-4">
-        <p>&copy; 2025</p>
+
+<footer
+  class="footer sm:footer-horizontal bg-base-300 text-base-content p-20 px-20 mt-20"
+>
+  <div class="flex md:flex-col gap-[var(--spacing-large)]">
+    <div class="flex flex-col gap-[var(--spacing-large)]">
+      <img
+        src="/img/BornebiffenLogo.webp"
+        alt="Bornebiffen Logo"
+        class="w-60"
+      />
+      <img
+        src="/img/filmstribenLogo.webp"
+        alt="Filmstriben Logo"
+        class="w-40"
+      />
     </div>
+    <div>
+      <Text teksttype="Footnote" weight="Bold" color="label">
+        DBC DIGITAL A/S<br />Tempovej 7-11<br />2750 Ballerup
+      </Text>
+    </div>
+  </div>
+
+  <hr
+    class="w-full border-t border-[var(--color-text-label)] block lg:hidden"
+  />
+
+  <nav class="ml-120 pr-60">
+    <Link href="/minside" variant="headline">Min side</Link>
+    <Link href="/listview" variant="headline">Alle film</Link>
+    <Link variant="headline">Kategori</Link>
+  </nav>
+
+  <nav class="flex flex-col items-end">
+    <Link variant="headline">Om børnebiffen</Link>
+    <Link variant="headline">Kontakt os</Link>
+    <Link variant="headline">Tilgængelighedserklæring</Link>
+    <Link variant="headline">Privatlivspolitik</Link>
+    <Link variant="headline">Cookie</Link>
+  </nav>
 </footer>
