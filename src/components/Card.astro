@@ -31,17 +31,23 @@ const {
 
   <div class="card-body">
     <Text teksttype="Headline" weight="Bold" color="body">{title}</Text>
-    <Text teksttype="Body" color="body" stylingclasses="line-clamp-2"
-      >{body}</Text
+    <Text
+      teksttype="Body"
+      color="body"
+      stylingclasses="line-clamp-2 max-h-[3rem] overflow-hidden">{body}</Text
     >
   </div>
   <div
     class="card-actions flex items-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical)] mt-auto"
   >
-    {badgestate === "true" && <div class={badgeClass}>{badge}</div>}
+    {
+      badgestate === "true" && (
+        <div class={`${badgeClass} font-bold`}>{badge}</div>
+      )
+    }
 
     <div class="flex items-center gap-2 ml-auto">
-      <Text teksttype="Caption" color="body">{duration}</Text>
+      <Text teksttype="Caption" weight="Bold" color="body">{duration}</Text>
       <Icon imgDefault="/img/icons/clock.webp" />
     </div>
   </div>
