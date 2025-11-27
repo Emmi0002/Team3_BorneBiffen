@@ -8,25 +8,13 @@ const currentPath = pathname.slice(1);
     <!-- Logo -->
     <div class="flex items-center gap-10">
       <a href="/" class="flex flex-col">
-        <img
-          src="/img/Bornebiffenlogolight.webp"
-          alt="Logo"
-          class="w-40 lg:w-48"
-        />
+        <img src="/img/Bornebiffenlogolight.webp" alt="Logo" class="w-40 lg:w-48" />
       </a>
 
       <!-- Desktop nav -->
       <nav class="hidden md:flex lg:items-center md:gap-8">
-        <a
-          href="/listview"
-          class="text-[var(--color-neutral)] font-bold hover:text-[var(--color-primary)] transition-colors"
-          >Alle film</a
-        >
-        <a
-          href="/min-side"
-          class="text-[var(--color-neutral)] font-bold hover:text-[var(--color-primary)] transition-colors"
-          >Min side</a
-        >
+        <a href="/listview" class="text-[var(--color-neutral)] font-bold hover:text-[var(--color-primary)] transition-colors">Alle film</a>
+        <a href="/minside" class="text-[var(--color-neutral)] font-bold hover:text-[var(--color-primary)] transition-colors">Min side</a>
       </nav>
     </div>
 
@@ -38,82 +26,36 @@ const currentPath = pathname.slice(1);
       </button>
 
       <!-- Profile name instead of login button -->
-      <a
-        href="/min-side"
-        class="hidden md:inline-flex items-center gap-3 text-[var(--color-neutral)] px-4 py-2 rounded-[12px]"
-        >Emilie</a
-      >
+      <a href="/min-side" class="hidden md:inline-flex items-center gap-3 text-[var(--color-neutral)] px-4 py-2 rounded-[12px]">Emilie</a>
 
       <!-- Mobile profile name -->
-      <a
-        href="/min-side"
-        class="md:hidden inline-flex items-center gap-2 text-[var(--color-neutral)] px-3 py-2 rounded-[12px]"
-        >Emilie</a
-      >
+      <a href="/min-side" class="md:hidden inline-flex items-center gap-2 text-[var(--color-neutral)] px-3 py-2 rounded-[12px]">Emilie</a>
 
       <!-- Hamburger (mobile) -->
-      <button
-        x-on:click="showmenu = !showmenu"
-        class="lg:hidden p-2 rounded-md text-[var(--color-neutral)]"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="3"
-          stroke="currentColor"
-          class="w-10 h-10"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+      <button x-on:click="showmenu = !showmenu" class="lg:hidden p-2 rounded-md text-[var(--color-neutral)]">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-10 h-10">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
         </svg>
       </button>
     </div>
   </div>
 
   <!-- Mobile dropdown menu -->
-  <nav
-    x-show="showmenu"
-    x-transition
-    @click.outside="showmenu = false"
-    class="lg:hidden absolute top-full left-0 w-full z-40"
-  >
-    <ul
-      class="bg-[var(--color-base-300)] border-t border-b border-[var(--color-primary)] divide-y divide-[var(--color-primary)]"
-    >
+  <nav x-show="showmenu" x-transition @click.outside="showmenu = false" class="lg:hidden absolute top-full left-0 w-full z-40">
+    <ul class="bg-[var(--color-base-300)] border-t border-b border-[var(--color-primary)] divide-y divide-[var(--color-primary)]">
       <li>
-        <a
-          href="/"
-          class="block w-full text-center py-6 text-2xl font-[var(--font-bold)] text-[var(--color-text-label)] hover:text-[var(--color-primary)] transition-colors"
-        >
-          <span
-            style="font-family:var(--font-bold); font-weight:700; font-size:18px;"
-            >Hjem</span
-          >
+        <a href="/" class="block w-full text-center py-6 text-2xl font-[var(--font-bold)] text-[var(--color-text-label)] hover:text-[var(--color-primary)] transition-colors">
+          <span style="font-family:var(--font-bold); font-weight:700; font-size:18px;">Hjem</span>
         </a>
       </li>
       <li>
-        <a
-          href="/listview"
-          class="block w-full text-center py-6 text-2xl font-[var(--font-bold)] text-[var(--color-text-label)] hover:text-[var(--color-primary)] transition-colors"
-        >
-          <span
-            style="font-family:var(--font-bold); font-weight:700; font-size:18px;"
-            >Alle film</span
-          >
+        <a href="/listview" class="block w-full text-center py-6 text-2xl font-[var(--font-bold)] text-[var(--color-text-label)] hover:text-[var(--color-primary)] transition-colors">
+          <span style="font-family:var(--font-bold); font-weight:700; font-size:18px;">Alle film</span>
         </a>
       </li>
       <li>
-        <a
-          href="/min-side"
-          class="block w-full text-center py-6 text-2xl font-[var(--font-bold)] text-[var(--color-text-label)] hover:text-[var(--color-primary)] transition-colors"
-        >
-          <span
-            style="font-family:var(--font-bold); font-weight:700; font-size:18px;"
-            >Min Side</span
-          >
+        <a href="/min-side" class="block w-full text-center py-6 text-2xl font-[var(--font-bold)] text-[var(--color-text-label)] hover:text-[var(--color-primary)] transition-colors">
+          <span style="font-family:var(--font-bold); font-weight:700; font-size:18px;">Min Side</span>
         </a>
       </li>
     </ul>
