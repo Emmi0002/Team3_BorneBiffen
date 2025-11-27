@@ -9,10 +9,12 @@ import CategoryCard from "../components/categorycard.astro";
 import Appsection from "../components/appsection.astro";
 import Button from "../components/Button.astro";
 import Icon from "../components/Icon.astro";
+import Categorycard from "../components/categorycard.astro";
+import Card from "../components/Card.astro";
 ---
 
 <MainLayout title="Titel">
-  <main class="container mx-auto"></main>
+  <main class="container"></main>
   <!-- Hero karousel sektion - CSS Auto-sliding Carousel - Full Width -->
   <section class="relative min-h-[400px] w-full">
     <div class="carousel-container w-full h-100 md:h-130 lg:h-160 relative">
@@ -83,13 +85,14 @@ import Icon from "../components/Icon.astro";
   </section>
 
   <!-- log ind sektion -->
-  <section class="container mx-auto mt-32 text-center p-10">
-    <Heading htmlheading="h2" size="Medium" weight="Bold" class="text-center mt-24">Se film med de mindste</Heading>
-    <Heading htmlheading="h3" size="Small" weight="Light" class="text-center mt-24">Log ind for at se alt indhold</Heading>
-    <div class="flex justify-center mt-6">
-      <div class="dropdown dropdown-bottom dropdown-center">
-        <div tabindex="0" role="button" class="btn m-1 px-25 bg-primary text-neutral">
-          Vælg dit lokale bibliotek
+  <section class="w-full flex justify-center mt-32 px-4">
+    <div class="w-full max-w-md text-center space-y-6">
+      <Heading htmlheading="h2" size="Medium" weight="Bold">Se film med de mindste</Heading>
+      <Heading htmlheading="h3" size="Small" weight="Light">Log ind for at se alt indhold</Heading>
+
+      <div class="dropdown dropdown-bottom dropdown-center w-full">
+        <div tabindex="0" role="button" class="btn w-full bg-primary text-neutral justify-between text-left whitespace-nowrap">
+          <span>Vælg dit lokale bibliotek</span>
           <Icon imgDefault="/img/icons/download.webp" alt="pil ned" size="medium" />
         </div>
         <ul tabindex="-1" class="dropdown-content menu bg-base-300 rounded-box z-1 w-100 p-2 shadow-sm">
@@ -101,19 +104,22 @@ import Icon from "../components/Icon.astro";
           <li><a>Amager Bibliotek</a></li>
         </ul>
       </div>
-    </div>
-    <div class="flex justify-center my-8">
-      <div class="w-24 h-px bg-base-300"></div>
-    </div>
-    <div class="flex flex-col gap-4 max-w-sm mx-auto items-center">
-      <input type="text" placeholder="CPR/Lånernummer/Bruger ID" class="input bg-[var(--color-surface-input)] w-full" />
-      <div class="relative w-full">
-        <input type="password" placeholder="Indtast pinkode" class="input bg-[var(--color-surface-input)] pr-10 w-full" />
+
+      <div class="flex justify-center my-8">
+        <div class="w-24 h-px bg-base-300"></div>
       </div>
-    </div>
-    <div class="grid grid-cols-2 justify-items-center mt-8 lg:max-w-180 mx-auto">
-      <Link href="#" class="text-sm text-base-100 mt-4 inline-block">Ny bruger?</Link>
-      <Button variant="primary" size="small" class="mt-20">Log ind</Button>
+
+      <div class="flex flex-col gap-4 w-full">
+        <input type="text" placeholder="CPR/Lånernummer/Bruger ID" class="input bg-[var(--color-surface-input)] w-full" />
+        <div class="relative w-full">
+          <input type="password" placeholder="Indtast pinkode" class="input bg-[var(--color-surface-input)] pr-10 w-full" />
+        </div>
+      </div>
+
+      <div class="flex justify-between items-end mt-8 w-full">
+        <Link href="#" class="text-sm text-base-100">Ny bruger?</Link>
+        <Button variant="primary" size="small">Log ind</Button>
+      </div>
     </div>
   </section>
 
@@ -125,28 +131,202 @@ import Icon from "../components/Icon.astro";
     <button class="btn btn-primary mt-4">Download appen</button>
   </section>
 
-  <!-- Category Cards sektion -->
-  <section class="my-24">
-    <Heading htmlheading="h2" size="Medium">Kategorier</Heading>
+  <!-- kategory og card slider -->
+  <section class="my-24 text-center">
+    <div class="carousel py-50">
+      <div>
+        <!-- Radio buttons til navigation (skjulte) -->
+        <input type="radio" name="category-carousel" id="cat-slide1" class="hidden" checked />
+        <input type="radio" name="category-carousel" id="cat-slide2" class="hidden" />
+        <input type="radio" name="category-carousel" id="cat-slide3" class="hidden" />
+        <input type="radio" name="category-carousel" id="cat-slide4" class="hidden" />
 
-    <!-- Desktop grid (hidden på mobil) -->
-    <div class="hidden sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
-      <CategoryCard imageSrc="/img/venskab.webp" imageAlt="personer krammer" label="Venskab" />
-      <CategoryCard imageSrc="/img/dyr.webp" imageAlt="ugler" label="Film med Dyr" />
-      <CategoryCard imageSrc="/img/kaerlighed.webp" imageAlt="to hjerter" label="Kærlighed" />
-      <CategoryCard imageSrc="/img/magi.webp" imageAlt="troldmand" label="Magiske film" />
-    </div>
+        <!-- Slide 1: Venskab -->
+        <div id="slide1-content" class="carousel-item relative w-full flex flex-col h-full">
+          <div class="relative mb-40">
+            <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between z-10">
+              <label for="cat-slide4" class="btn btn-circle bg-base-100 cursor-pointer">❮</label>
+              <label for="cat-slide2" class="btn btn-circle bg-base-100 cursor-pointer">❯</label>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center mb-30">
+              <Categorycard imageSrc="/img/venskab.webp" imgAlt="Billede der illustrerer venskab" label="Venskab" />
+            </div>
+          </div>
 
-    <!-- Mobil karousel (kun synlig på mobil) -->
-    <div class="sm:hidden mt-4">
-      <div class="overflow-x-auto">
-        <div class="flex gap-4 pb-4" style="width: max-content;">
-          <CategoryCard imageSrc="/img/venskab.webp" imageAlt="personer krammer" label="Venskab" stylingClasses="flex-shrink-0" />
-          <CategoryCard imageSrc="/img/dyr.webp" imageAlt="ugler" label="Film med Dyr" stylingClasses="flex-shrink-0" />
-          <CategoryCard imageSrc="/img/kaerlighed.webp" imageAlt="to hjerter" label="Kærlighed" stylingClasses="flex-shrink-0" />
-          <CategoryCard imageSrc="/img/magi.webp" imageAlt="troldmand" label="Magiske film" stylingClasses="flex-shrink-0" />
+          <!-- Cards under billedet -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8 px-8 mx-auto max-w-6xl">
+            <Card
+              imgSrc="/img/Rita.webp"
+              imgAlt="Rita og Krokodille"
+              title="Rita og Krokodille: Skovturen"
+              body="Vennerne skal ud og samle kastanjer i skoven. Rita formaner Krokodille at blive på stien, så han ikke farer vild."
+              badgestate="true"
+              badge="Venskab"
+              duration="5 min"
+            />
+            <Card
+              imgSrc="/img/VilleogVildeKanin.webp"
+              imgAlt="Ville og Vilde Kanin"
+              title="Ville og Vilde Kanin"
+              body="Ville er en lille hvid kanin, der bor i et bur på en bondegård, hvor han har det godt og trygt."
+              badgestate="true"
+              badge="Venskab"
+              duration="29 min"
+            />
+            <Card
+              imgSrc="/img/Snuden.webp"
+              imgAlt="Snuden rejser hjemmefra"
+              title="Snuden rejser hjemmefra"
+              body="Snuden er et hemmeligt og fredeligt dyr, der lever i sin grønne mose. Her er han ven med alle dyr."
+              badgestate="true"
+              badge="Eventyr"
+              duration="17 min"
+            />
+            <Card
+              imgSrc="/img/Moster.webp"
+              imgAlt="Min mosters historier"
+              title="Min mosters historier - Den hvide hval"
+              body="Theodor vil se hvalen Moby Dick. Med hjælp fra Lola og skibskokken Pande bygger Theodor et kæmpe net."
+              badgestate="true"
+              badge="Historier"
+              duration="10 min"
+            />
+          </div>
+        </div>
+
+        <!-- Slide 2: Kærlighed -->
+        <div id="slide2-content" class="carousel-item relative w-full flex flex-col h-full hidden">
+          <div class="relative mb-40">
+            <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between z-10">
+              <label for="cat-slide1" class="btn btn-circle bg-base-100 cursor-pointer">❮</label>
+              <label for="cat-slide3" class="btn btn-circle bg-base-100 cursor-pointer">❯</label>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center mb-30">
+              <Categorycard imageSrc="/img/kaerlighed.webp" imgAlt="Billede der illustrerer kærlighed" label="Kærlighed" />
+            </div>
+          </div>
+
+          <!-- Cards under billedet -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8 px-8 mx-auto max-w-6xl">
+            <Card
+              imgSrc="/img/Vitello.webp"
+              imgAlt="Vitello"
+              title="Vitello tigger en masse slik"
+              body="Fredag er slikdag. Alle andre dage er ikke-slik-dage. Det synes Vitello er meget, meget uretfærdigt."
+              badgestate="true"
+              badge="Vitello"
+              duration="7 min"
+            />
+            <Card
+              imgSrc="/img/LilleFro.webp"
+              imgAlt="Lille Frø"
+              title="Lille Frø"
+              body="Lille Frøs ankomst i den lille frøfamilie er lige så eksplosiv som historien om, hvordan han og hans nye familie skal finde hinanden."
+              badgestate="true"
+              badge="Familie"
+              duration="8 min"
+            />
+            <Card
+              imgSrc="/img/Snemandenogsnehunden.webp"
+              imgAlt="Snemanden og Snehunden"
+              title="Snemanden og Snehunden"
+              body="En lille dreng får sit livs julegave, da den snemand og snehund, han har bygget i sin baghave, bliver vakt til live."
+              badgestate="true"
+              badge="Vinter"
+              duration="24 min"
+            />
+            <Card imgSrc="/img/Snemanden.webp" imgAlt="Snemanden" title="Snemanden" body="En snemand bliver på magisk vis vakt til live i denne smukke, ordløse animationsfilm om barndommens idyl." badgestate="true" badge="Vinter" duration="25 min" />
+          </div>
+        </div>
+
+        <!-- Slide 3: Film med Dyr -->
+        <div id="slide3-content" class="carousel-item relative w-full flex flex-col h-full hidden">
+          <div class="relative mb-40">
+            <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between z-10">
+              <label for="cat-slide2" class="btn btn-circle bg-base-100 cursor-pointer">❮</label>
+              <label for="cat-slide4" class="btn btn-circle bg-base-100 cursor-pointer">❯</label>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center mb-30">
+              <Categorycard imageSrc="/img/dyr.webp" imgAlt="Billede der illustrerer dyr" label="Film med Dyr" />
+            </div>
+          </div>
+
+          <!-- Cards under billedet -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8 px-8 mx-auto max-w-6xl">
+            <Card
+              imgSrc="/img/Rita.webp"
+              imgAlt="Rita og Krokodille"
+              title="Rita og Krokodille: Skovturen"
+              body="Vennerne skal ud og samle kastanjer i skoven. Rita formaner Krokodille at blive på stien."
+              badgestate="true"
+              badge="Dyr"
+              duration="5 min"
+            />
+            <Card imgSrc="/img/VilleogVildeKanin.webp" imgAlt="Ville og Vilde Kanin" title="Ville og Vilde Kanin" body="Ville er en lille hvid kanin, der bor i et bur på en bondegård." badgestate="true" badge="Dyr" duration="29 min" />
+            <Card imgSrc="/img/Snuden.webp" imgAlt="Snuden" title="Snuden rejser hjemmefra" body="Snuden er et hemmeligt og fredeligt dyr, der lever i sin grønne mose." badgestate="true" badge="Dyr" duration="17 min" />
+            <Card imgSrc="/img/LilleFro.webp" imgAlt="Lille Frø" title="Lille Frø" body="Lille Frøs ankomst i den lille frøfamilie er lige så eksplosiv." badgestate="true" badge="Dyr" duration="8 min" />
+          </div>
+        </div>
+
+        <!-- Slide 4: Magiske film -->
+        <div id="slide4-content" class="carousel-item relative w-full flex flex-col h-full hidden">
+          <div class="relative mb-40">
+            <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between z-10">
+              <label for="cat-slide3" class="btn btn-circle bg-base-100 cursor-pointer">❮</label>
+              <label for="cat-slide1" class="btn btn-circle bg-base-100 cursor-pointer">❯</label>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center mb-30">
+              <Categorycard imageSrc="/img/magi.webp" imgAlt="Billede der illustrerer magi" label="Magiske film" />
+            </div>
+          </div>
+
+          <!-- Cards under billedet -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8 px-8 mx-auto max-w-6xl">
+            <Card
+              imgSrc="/img/Snemandenogsnehunden.webp"
+              imgAlt="Snemanden og Snehunden"
+              title="Snemanden og Snehunden"
+              body="En lille dreng får sit livs julegave, da den snemand og snehund bliver vakt til live."
+              badgestate="true"
+              badge="Magi"
+              duration="24 min"
+            />
+            <Card imgSrc="/img/Snemanden.webp" imgAlt="Snemanden" title="Snemanden" body="En snemand bliver på magisk vis vakt til live i denne smukke animationsfilm." badgestate="true" badge="Magi" duration="25 min" />
+            <Card
+              imgSrc="/img/Vitellomodergud.webp"
+              imgAlt="Vitello møder gud"
+              title="Vitello møder gud"
+              body="Vitello møder en gammel mand med et meget stort hvidt skæg. Gud kan få alting til at ske."
+              badgestate="true"
+              badge="Magi"
+              duration="7 min"
+            />
+            <Card imgSrc="/img/LilleFro.webp" imgAlt="Lille Frø" title="Lille Frø" body="En magisk historie om en lille frø og hans eventyrlige rejse." badgestate="true" badge="Magi" duration="8 min" />
+          </div>
         </div>
       </div>
     </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Lyt efter ændringer i radio buttons
+        const radioButtons = document.querySelectorAll('input[name="category-carousel"]');
+        const slides = [document.getElementById("slide1-content"), document.getElementById("slide2-content"), document.getElementById("slide3-content"), document.getElementById("slide4-content")];
+
+        radioButtons.forEach((radio, index) => {
+          radio.addEventListener("change", function () {
+            if (this.checked) {
+              // Skjul alle slides
+              slides.forEach((slide) => {
+                slide.classList.add("hidden");
+              });
+
+              // Vis det aktive slide
+              slides[index].classList.remove("hidden");
+            }
+          });
+        });
+      });
+    </script>
   </section>
 </MainLayout>
