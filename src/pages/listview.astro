@@ -7,151 +7,85 @@ import HeaderNegative from "../components/HeaderNegative.astro";
 
 <MainLayout title="Børnebiffen - Listevisning">
   <HeaderNegative />
-  <main
-    class="mt-10"
-    style="background-image: url('/img/popcorn.webp'); background-repeat: no-repeat; background-position: right bottom; background-size: contain; background-attachment: fixed;"
-  >
+  <main class="mt-10" style="background-image: url('/img/popcorn.webp'); background-repeat: no-repeat; background-position: right bottom; background-size: contain; background-attachment: fixed;">
     <div>
-      <img
-        src="/img/Popcorn.webp"
-        alt="Popcorn Poppi"
-        class="absolute overflow-x-hidden -right-25 top-25 h-full w-auto max-w-80 max-h-80 rotate-[-35deg] md:block hidden"
-      />
+      <img src="/img/Popcorn.webp" alt="Popcorn Poppi" class="absolute overflow-x-hidden -right-25 top-25 h-full w-auto max-w-80 max-h-80 rotate-[-35deg] md:block hidden" />
     </div>
 
-    <section
-      class="mx-[var(--margin-side-small)] md:mx-[var(--margin-side-large)]"
-    >
+    <section class="mx-[var(--margin-side-small)] md:mx-[var(--margin-side-large)]">
       <Heading htmlheading="h1" size="Large">Alle film</Heading>
       <div class="overflow-x-auto">
-        <div
-          class="flex flex-nowrap my-[var(--spacing-large)] md:flex-wrap gap-[var(--spacing-component-token)] md:pr-50"
-        >
+        <div class="flex flex-nowrap my-[var(--spacing-large)] md:flex-wrap gap-[var(--spacing-component-token)] md:pr-50">
           <label class="inline-flex items-center cursor-pointer">
             <input type="checkbox" id="filter-venskaber" class="sr-only peer" />
-            <span
-              class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap"
-              >Venskaber</span
-            >
+            <span class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap">Venskaber</span>
           </label>
 
           <label class="inline-flex items-center cursor-pointer">
-            <input
-              type="checkbox"
-              id="filter-kaerlighed"
-              class="sr-only peer"
-            />
-            <span
-              class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap"
-              >Kærlighed</span
-            >
+            <input type="checkbox" id="filter-kaerlighed" class="sr-only peer" />
+            <span class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap">Kærlighed</span>
           </label>
 
           <label class="inline-flex items-center cursor-pointer">
             <input type="checkbox" id="filter-vitello" class="sr-only peer" />
-            <span
-              class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap"
-              >Vitello film</span
-            >
+            <span class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap">Vitello film</span>
           </label>
 
           <label class="inline-flex items-center cursor-pointer">
             <input type="checkbox" id="filter-7min" class="sr-only peer" />
-            <span
-              class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap"
-              >7 min</span
-            >
+            <span class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap">7 min</span>
           </label>
 
           <label class="inline-flex items-center cursor-pointer">
-            <input
-              type="checkbox"
-              id="filter-film-med-dyr"
-              class="sr-only peer"
-            />
-            <span
-              class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap"
-              >Film med dyr</span
-            >
+            <input type="checkbox" id="filter-film-med-dyr" class="sr-only peer" />
+            <span class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap">Film med dyr</span>
           </label>
 
           <label class="inline-flex items-center cursor-pointer">
             <input type="checkbox" id="filter-3-4" class="sr-only peer" />
-            <span
-              class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap"
-              >3–4 år</span
-            >
+            <span class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap">3–4 år</span>
           </label>
 
           <label class="inline-flex items-center cursor-pointer">
             <input type="checkbox" id="filter-tegnefilm" class="sr-only peer" />
-            <span
-              class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap"
-              >Tegnefilm</span
-            >
+            <span class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap">Tegnefilm</span>
           </label>
 
           <label class="inline-flex items-center cursor-pointer">
             <input type="checkbox" id="filter-animerede" class="sr-only peer" />
-            <span
-              class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap"
-              >Animerede film</span
-            >
+            <span class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap">Animerede film</span>
           </label>
 
           <label class="inline-flex items-center cursor-pointer">
             <input type="checkbox" id="filter-5-6" class="sr-only peer" />
-            <span
-              class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap"
-              >5–6 år</span
-            >
+            <span class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap">5–6 år</span>
           </label>
 
           <label class="inline-flex items-center cursor-pointer">
             <input type="checkbox" id="filter-jul" class="sr-only peer" />
-            <span
-              class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap"
-              >Jul</span
-            >
+            <span class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap">Jul</span>
           </label>
 
           <label class="inline-flex items-center cursor-pointer">
             <input type="checkbox" id="filter-magi" class="sr-only peer" />
-            <span
-              class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap"
-              >Magi</span
-            >
+            <span class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap">Magi</span>
           </label>
 
           <label class="inline-flex items-center cursor-pointer">
-            <input
-              type="checkbox"
-              id="filter-lille-finger"
-              class="sr-only peer"
-            />
-            <span
-              class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap"
-              >Lille finger</span
-            >
+            <input type="checkbox" id="filter-lille-finger" class="sr-only peer" />
+            <span class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap">Lille finger</span>
           </label>
 
           <label class="inline-flex items-center cursor-pointer">
             <input type="checkbox" id="filter-dyr-i-byr" class="sr-only peer" />
-            <span
-              class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap"
-              >Dyr i by'r</span
-            >
+            <span class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap">Dyr i by'r</span>
           </label>
           <label class="inline-flex items-center cursor-pointer">
             <input type="checkbox" id="filter-dyr-i-byr" class="sr-only peer" />
-            <span
-              class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap"
-              >Min mosters historier</span
-            >
+            <span class="btn btn-secondary btn-soft rounded-full peer-checked:bg-[var(--color-secondary)] peer-checked:text-white flex-shrink-0 whitespace-nowrap">Min mosters historier</span>
           </label>
         </div>
       </div>
-
       <article
         class="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(220px,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-[var(--spacing-large)]"
       >
