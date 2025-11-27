@@ -3,6 +3,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Heading from "../components/Heading.astro";
 import CategoryCard from "../components/categorycard.astro";
 import Appsection from "../components/appsection.astro";
+import Cardslider from "../components/Cardslider.astro";
 ---
 
 <MainLayout title="Børnebiffen - Listevisning">
@@ -18,7 +19,8 @@ import Appsection from "../components/appsection.astro";
     </section>
 
     <!-- kategori sektion -->
-    <section class="my-24">
+    <section class="my-24 mx-auto max-w-6xl px-4">
+      <!-- sektion overskrift -->
       <Heading htmlheading="h2" weight="Bold" size="Medium">Dine mest sete Temaer</Heading>
 
       <!-- Desktop grid (hidden på mobil) -->
@@ -43,12 +45,18 @@ import Appsection from "../components/appsection.astro";
     </section>
 
     <!-- favorit sektion -->
-    <section></section>
+    <section class="mb-[var(--margin-sektioner-small)] lg:mb-[var(--margin-sektioner-large)]">
+      <Cardslider overskrift="Dine favoritter" />
+    </section>
 
     <!-- se videre sektion -->
-    <section></section>
+    <section class="mb-[var(--margin-sektioner-small)] lg:mb-[var(--margin-sektioner-large)]">
+      <Cardslider overskrift="Se videre..." />
+    </section>
 
     <!-- anbefalet sektion -->
-    <section></section>
+    <section class="mb-[var(--margin-sektioner-small)] lg:mb-[var(--margin-sektioner-large)]">
+      <Cardslider overskrift="Anbefalet til dig" />
+    </section>
   </main>
 </MainLayout>
