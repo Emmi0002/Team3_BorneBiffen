@@ -63,6 +63,7 @@
 @theme {
   --color-text-label: #572d75;
   --color-surface-subtle: #efe8f8;
+  --color-surface-input: #fcfaeb;
   /* typografi - nu bruger alle samme font-family med forskellige weights */
   --font-ekstrabold: "MerriweatherSansExtraBold", sans-serif;
   --font-bold: "MerriweatherSanBold", sans-serif;
