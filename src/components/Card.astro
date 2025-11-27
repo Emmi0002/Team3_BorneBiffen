@@ -14,17 +14,20 @@ const {
 } = Astro.props;
 ---
 
-<div
+<a
+  href="/singleview"
   class="card bg-base-100 w-full max-w-[30rem] shadow-sm hover:bg-[var(--color-primary)] transition-colors duration-200 flex flex-col overflow-hidden"
 >
   <figure class="relative">
-    <img src={imgSrc} alt={imgAlt} class="w-full h-44 object-cover" />
+    <img src={imgSrc} alt={imgAlt} class="w-full object-cover" />
 
-    <div class="absolute inset-0 flex items-center justify-center">
+    <div class="absolute inset-0 bg-black/40 pointer-events-none z-10"></div>
+
+    <div class="absolute inset-0 flex items-center justify-center z-20">
       <Icon imgDefault="/img/icons/playnegative.webp" size="xl" />
     </div>
 
-    <div class="absolute top-2 right-2">
+    <div class="absolute top-2 right-2 z-20">
       <Icon imgDefault="/img/icons/heart.webp" size="xl" />
     </div>
   </figure>
@@ -51,4 +54,4 @@ const {
       <Icon imgDefault="/img/icons/clock.webp" />
     </div>
   </div>
-</div>
+</a>
