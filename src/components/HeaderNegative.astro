@@ -8,19 +8,23 @@ const currentPath = pathname.slice(1);
     <!-- Logo -->
     <div class="flex items-center gap-10">
       <a href="/" class="flex flex-col">
-        <img src="/img/BornebiffenLogo.webp" alt="Logo" class="w-40 lg:w-48" />
+        <img
+          src="/img/Bornebiffenlogolight.webp"
+          alt="Logo"
+          class="w-40 lg:w-48"
+        />
       </a>
 
       <!-- Desktop nav -->
       <nav class="hidden md:flex lg:items-center md:gap-8">
         <a
           href="/listview"
-          class="text-[var(--color-text-label)] font-bold hover:text-[var(--color-primary)] transition-colors"
+          class="text-[var(--color-neutral)] font-bold hover:text-[var(--color-primary)] transition-colors"
           >Alle film</a
         >
         <a
           href="/min-side"
-          class="text-[var(--color-text-label)] font-bold hover:text-[var(--color-primary)] transition-colors"
+          class="text-[var(--color-neutral)] font-bold hover:text-[var(--color-primary)] transition-colors"
           >Min side</a
         >
       </nav>
@@ -30,58 +34,27 @@ const currentPath = pathname.slice(1);
     <div class="flex items-center gap-4">
       <!-- Search (visible on all sizes, but smaller on mobile) -->
       <button aria-label="Søg" class="p-2 rounded-full">
-        <img src="/img/icons/Searchpurple.webp" alt="Søg" class="w-6 h-6" />
+        <img src="/img/icons/Searchnegative.webp" alt="Søg" class="w-6 h-6" />
       </button>
 
-      <!-- Login button (desktop: label + icon; mobile: still visible) -->
+      <!-- Profile name instead of login button -->
       <a
-        href="/login"
-        class="hidden md:inline-flex items-center gap-3 bg-[var(--color-primary)] text-[var(--color-primary-content)] px-4 py-2 rounded-[12px]"
+        href="/min-side"
+        class="hidden md:inline-flex items-center gap-3 text-[var(--color-neutral)] px-4 py-2 rounded-[12px]"
+        >Emilie</a
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-5 h-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          stroke-width="1.5"
-          ><path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M16 11V7a4 4 0 10-8 0v4"></path><path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M5 11h14v8a2 2 0 01-2 2H7a2 2 0 01-2-2v-8z"></path></svg
-        >
-        <span class="font-medium">Login</span>
-      </a>
 
-      <!-- Mobile login-ish button shown on small screens as pill (keeps visual weight) -->
+      <!-- Mobile profile name -->
       <a
-        href="/login"
-        class="md:hidden inline-flex items-center gap-2 bg-[var(--color-primary)] text-[var(--color-primary-content)] px-3 py-2 rounded-[12px]"
+        href="/min-side"
+        class="md:hidden inline-flex items-center gap-2 text-[var(--color-neutral)] px-3 py-2 rounded-[12px]"
+        >Emilie</a
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-5 h-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          stroke-width="1.5"
-          ><path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M16 11V7a4 4 0 10-8 0v4"></path><path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M5 11h14v8a2 2 0 01-2 2H7a2 2 0 01-2-2v-8z"></path></svg
-        >
-      </a>
 
       <!-- Hamburger (mobile) -->
       <button
         x-on:click="showmenu = !showmenu"
-        class="lg:hidden p-2 rounded-md text-[var(--color-text-label)]"
+        class="lg:hidden p-2 rounded-md text-[var(--color-neutral)]"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
