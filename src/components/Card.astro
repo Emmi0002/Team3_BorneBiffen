@@ -14,31 +14,37 @@ const {
 } = Astro.props;
 ---
 
-<a href="/singleview" class="card bg-base-100 w-full max-w-[35rem] min-w-[15rem] h-full shadow-sm hover:bg-[var(--color-primary)] transition-colors duration-200 flex flex-col overflow-hidden">
+<a href="/singleview" class="group card bg-base-100 w-full max-w-[35rem] min-w-[15rem] h-full shadow-sm hover:bg-[var(--color-primary)] transition-colors duration-200 flex flex-col overflow-hidden">
   <figure class="relative">
     <img src={imgSrc} alt={imgAlt} class="w-full object-cover" />
 
-    <div class="absolute inset-0 bg-black/10 pointer-events-none z-10"></div>
+    <div class="absolute inset-0 bg-black/10 group-hover:bg-black/60 duration-300 pointer-events-none z-10"></div>
 
-    <!-- <div class="absolute inset-0 flex items-center justify-center z-20">
+    <div class="opacity-0 group-hover:opacity-100 absolute inset-0 flex items-center justify-center z-20 transition-opacity duration-300">
       <Icon imgDefault="/img/icons/playnegative.webp" size="xl" />
-    </div> -->
+    </div>
 
-    <div class="absolute top-2 right-2 z-20">
-      <Icon imgDefault="/img/icons/heart.webp" size="xl" />
+    <!-- Hjerte-ikon med click-handler -->
+    <div
+      class="absolute top-2 right-2 z-20 cursor-pointer"
+      @click.prevent="isFavorited = !isFavorited"
+      x-data="{ isFavorited: localStorage.getItem('favorite-' + window.location.pathname) === 'true' }"
+      @click="localStorage.setItem('favorite-' + window.location.pathname, isFavorited)"
+    >
+      <img :src="isFavorited ? '/img/icons/heartfull.webp' : '/img/icons/heart.webp'" alt="Favorite" class="w-10 h-10 object-contain transition-all duration-200 hover:scale-110" />
     </div>
   </figure>
 
   <div class="card-body text-left">
-    <Text teksttype="Headline" weight="Bold" color="body">{title}</Text>
-    <Text teksttype="Body" color="body" stylingclasses="line-clamp-2 max-h-[3rem] overflow-hidden">{body}</Text>
+    <Text teksttype="Headline" weight="Bold" color="body" stylingclasses="group-hover:text-primary-content transition-colors duration-300">{title}</Text>
+    <Text teksttype="Body" color="body" stylingclasses="line-clamp-2 max-h-[3rem] overflow-hidden group-hover:text-primary-content transition-colors duration-300">{body}</Text>
   </div>
   <div class="card-actions flex items-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical)] mt-auto">
     {badgestate === "true" && <div class={`${badgeClass} font-bold`}>{badge}</div>}
 
     <div class="flex items-center gap-2 ml-auto">
-      <Text teksttype="Caption" weight="Bold" color="body">{duration}</Text>
-      <Icon imgDefault="/img/icons/clock.webp" />
+      <Text tekstype="Caption" weight="Bold" color="body" stylingclasses="group-hover:text-primary-content transition-colors duration-300">{duration}</Text>
+      <Icon imgDefault="/img/icons/clock.webp" imgHover="/img/icons/clock-white.webp" size="medium" />
     </div>
   </div>
 </a>
