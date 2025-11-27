@@ -4,9 +4,9 @@ import Link from "./Link.astro";
 ---
 
 <footer
-  class="footer sm:footer-horizontal bg-base-300 text-base-content p-20 px-20 mt-20"
+  class="footer sm:footer-horizontal lg:pl-40 bg-base-300 text-base-content p-10 mt-20"
 >
-  <div class="flex md:flex-col gap-[var(--spacing-large)]">
+  <div class="flex sm:flex-col gap-[var(--spacing-large)]">
     <div class="flex flex-col gap-[var(--spacing-large)]">
       <img
         src="/img/BornebiffenLogo.webp"
@@ -27,16 +27,16 @@ import Link from "./Link.astro";
   </div>
 
   <hr
-    class="w-full border-t border-[var(--color-text-label)] block lg:hidden"
+    class="w-full border-t border-[var(--color-text-label)] block sm:hidden"
   />
 
-  <nav class="ml-120 pr-60">
+  <nav class="lg:pl-40">
     <Link href="/minside" variant="headline">Min side</Link>
     <Link href="/listview" variant="headline">Alle film</Link>
     <Link variant="headline">Kategori</Link>
   </nav>
 
-  <nav class="flex flex-col items-end">
+  <nav class="flex flex-col md:items-end lg:pl-40">
     <Link variant="headline">Om børnebiffen</Link>
     <Link variant="headline">Kontakt os</Link>
     <Link variant="headline">Tilgængelighedserklæring</Link>
