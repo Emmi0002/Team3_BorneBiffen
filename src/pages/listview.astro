@@ -14,7 +14,7 @@ import HeaderNegative from "../components/HeaderNegative.astro";
 
     <section class="mx-[var(--margin-side-small)] md:mx-[var(--margin-side-large)]">
       <Heading htmlheading="h1" size="Large">Alle film</Heading>
-      <div class="overflow-x-auto">
+      <div class="overflow-x-auto mb-[var(--margin-sektioner-small)] lg:mb-[var(--margin-sektioner-large)]">
         <div class="flex flex-nowrap my-[var(--spacing-large)] md:flex-wrap gap-[var(--spacing-component-token)] md:pr-50">
           <label class="inline-flex items-center cursor-pointer">
             <input type="checkbox" id="filter-venskaber" class="sr-only peer" />
@@ -86,7 +86,9 @@ import HeaderNegative from "../components/HeaderNegative.astro";
           </label>
         </div>
       </div>
-      <article class="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(220px,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-[var(--spacing-large)]">
+      <article
+        class="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(220px,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-[var(--spacing-large)]"
+      >
         <Card
           imgSrc="/img/Snemandenogsnehunden.webp"
           imgAlt="Snemanden og Snehunden"

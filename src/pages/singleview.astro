@@ -1,23 +1,23 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Card from "../components/Card.astro";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Icon from "../components/Icon.astro";
 import Cardslider from "../components/Cardslider.astro";
 import Header from "../components/Header.astro";
-import HeaderNegative from "../components/HeaderNegative.astro";
 ---
 
 <MainLayout title="Børnebiffen - Singleview">
-  <HeaderNegative />
+  <Header />
 
   <!-- ---------------------Section: Herosection------------------------- -->
-  <section class="relative bg-[url('/img/Snemandenogsnehunden.webp')] bg-cover bg-center h-[80vh] mb-[var(--spacing-horizontal-l)] pb-[var(--spacing-horizontal-l)]">
+  <section class="relative bg-[url('/img/Snemandenogsnehunden.webp')] bg-cover bg-center h-[90vh] mb-[var(--spacing-horizontal-l)] pb-[var(--spacing-horizontal-l)] -mt-25">
     <!-- Horisontalt gradient-overlay: transparent (0%) til sort med 80% opacitet -->
     <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);"></div>
     <img src="/img/icons/playnegative.webp" alt="Play icon" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-16 h-16 lg:w-24 lg:h-24 object-contain" />
-    <img src="/img/icons/arrowleft-negative.webp" alt="Gå tilbage knap" class="absolute top-[var(--spacing-vertical-l)] left-[var(--spacing-horizontal-l)] z-40 w-10 h-10 object-contain cursor-pointer" />
+    <a href="/listview">
+      <img src="/img/icons/arrowleft-negative.webp" alt="Gå tilbage knap" class="absolute top-25 left-[var(--spacing-horizontal-l)] z-40 w-10 h-10 object-contain hover:cursor-pointer" />
+    </a>
     <div class="relative z-10 max-w-6xl mx-auto h-full flex items-end justify-end mr-[var(--spacing-horizontal)] lg:mr-[var(--spacing-horizontal-l)] mb-[var(--spacing-horizontal-l)]">
       <div class="text-right">
         <Heading size="Large" weight="Ekstrabold" class="">Snemanden og <br />Snehunden</Heading>
@@ -80,8 +80,8 @@ import HeaderNegative from "../components/HeaderNegative.astro";
       <!-- Beskrivelse -->
       <div>
         <Text teksttype="Body" stylingclasses="mb-[var(--spacing-large)] max-w-[70%]"
-          >En lille dreng får sit livs julegave, da den snemand og snehund, han har bygget i sin baghave, bliver vakt til live. Sammen tager de på eventyr i vinterlandskabet og når helt til snemandstræf på Nordpolen, hvor de endda møder Julemanden.
-          Men kan magien vare ved til morgenstunden?</Text
+          >En lille dreng får sit livs julegave, da den snemand og snehund, han har bygget i sin baghave, bliver vakt til live. Sammen tager de på eventyr i vinterlandskabet og når helt til
+          snemandstræf på Nordpolen, hvor de endda møder Julemanden. Men kan magien vare ved til morgenstunden?</Text
         >
         <Text teksttype="Body" weight="Bold" stylingclasses="mb-[var(--spacing-vertical-xs)] max-w-[50%]">Instruktør</Text>
         <Text teksttype="Body" stylingclasses="mb-[var(--spacing-large)] max-w-[50%]">Hilary Audus & Robin Shaw (Storbritannien, 2012)</Text>
