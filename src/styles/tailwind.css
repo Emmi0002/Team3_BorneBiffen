@@ -36,6 +36,8 @@
 
 :root {
   /* spacing */
+  --spacing-horizontal-xs: 8px;
+  --spacing-vertical-xs: 4px;
   --spacing-horizontal: 16px;
   --spacing-vertical: 8px;
   --spacing-horizontal-m: 20px;
@@ -45,7 +47,9 @@
   --spacing-large: 24px;
   --spacing-component-token: 12px;
   --margin-side-large: 50px;
-    --margin-side-small: 20px;
+  --margin-side-small: 20px;
+  --margin-sektioner-small: 40px;
+  --margin-sektioner-large: 80px;
 
   /* radius */
   --radius-xs: 4px;
@@ -53,8 +57,7 @@
   --radius-m: 8px;
   --radius-l: 12px;
   --radius-xl: 16px;
-  --radius-full: 9999px; 
-
+  --radius-full: 9999px;
 }
 
 @theme {
