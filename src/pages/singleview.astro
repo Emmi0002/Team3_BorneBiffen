@@ -12,15 +12,14 @@ import Icon from "../components/Icon.astro";
     class="relative bg-[url('/img/Snemandenogsnehunden.webp')] bg-cover bg-center h-[80vh] mb-[var(--spacing-horizontal-l)] pb-[var(--spacing-horizontal-l)]"
   >
     <!-- Horisontalt gradient-overlay: transparent (0%) til sort med 80% opacitet -->
-    <div
-      class="absolute inset-0"
-      style="background: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);"
-    >
-    </div>
-
-    <div
-      class="relative z-10 max-w-6xl mx-auto h-full flex items-end justify-end mr-[var(--spacing-horizontal-l)] mb-[var(--spacing-horizontal-l)]"
-    >
+    <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);"></div>
+    <img src="/img/icons/playnegative.webp" alt="Play icon" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-16 h-16 lg:w-24 lg:h-24 object-contain" />
+    <img
+      src="/img/icons/arrowleft-negative.webp"
+      alt="Gå tilbage knap"
+      class="absolute top-[var(--spacing-vertical-l)] left-[var(--spacing-horizontal-l)] z-40 w-10 h-10 object-contain cursor-pointer"
+    />
+    <div class="relative z-10 max-w-6xl mx-auto h-full flex items-end justify-end mr-[var(--spacing-horizontal-l)] mb-[var(--spacing-horizontal-l)]">
       <div class="text-right">
         <Heading size="Large" weight="Ekstrabold" class=""
           >Snemanden og <br />Snehunden</Heading
@@ -36,63 +35,52 @@ import Icon from "../components/Icon.astro";
     </div>
   </section>
   <!-- ---------------------Section: Information om filmen------------------------- -->
-  <section
-    class="grid grid-cols-[2fr_1fr] mx-[var(--margin-side-large)] mb-[var(--margin-sektioner-large)]"
-  >
+  <section class="grid grid-cols-[2fr_1fr] mx-[var(--margin-side-large)] mb-[var(--spacing-vertical-l)]">
     <article>
       <Heading size="Medium" stylingclasses="mb-[var(--spacing-vertical-xs)]"
         >Mere om filmen</Heading
       >
       <!-- Badges -->
-      <div
-        class="flex gap-[var(--spacing-horizontal-xs)] mb-[var(--spacing-large)]"
-      >
-        <!-- Vinter -->
-        <div
-          class="flex items-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical-m)] mt-auto badge badge-secondary border-neutral"
-        >
-          <div class="flex items-center gap-2 ml-auto">
-            <Text teksttype="Caption" weight="Bold">Vinter</Text>
-          </div>
-        </div>
-        <!-- Jul -->
-        <div
-          class="flex items-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical-m)] mt-auto badge badge-secondary border-neutral"
-        >
-          <div class="flex items-center gap-2 ml-auto">
-            <Text teksttype="Caption" weight="Bold">Jul</Text>
-          </div>
-        </div>
-        <!-- Kæledyr -->
-        <div
-          class="flex items-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical-m)] mt-auto badge badge-secondary border-neutral"
-        >
-          <div class="flex items-center gap-2 ml-auto">
-            <Text teksttype="Caption" weight="Bold">Kæledyr</Text>
-          </div>
-        </div>
-        <!-- Fantasi -->
-        <div
-          class="flex items-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical-m)] mt-auto badge badge-secondary border-neutral"
-        >
-          <div class="flex items-center gap-2 ml-auto">
-            <Text teksttype="Caption" weight="Bold">Fantasi</Text>
-          </div>
-        </div>
-        <!-- Fantasivenner -->
-        <div
-          class="flex items-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical-m)] mt-auto badge badge-secondary border-neutral"
-        >
-          <div class="flex items-center gap-2 ml-auto">
-            <Text teksttype="Caption" weight="Bold">Fantasivenner</Text>
-          </div>
-        </div>
-        <!-- Nordpolen -->
-        <div
-          class="flex items-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical-m)] mt-auto badge badge-secondary border-neutral"
-        >
-          <div class="flex items-center gap-2 ml-auto">
-            <Text teksttype="Caption" weight="Bold">Nordpolen</Text>
+      <div class="gap-[var(--spacing-horizontal-xs)] mb-[var(--spacing-large)]">
+        <!-- Mobile: horisontal scroll; Desktop: normal (overflow-visible) -->
+        <div class="w-full overflow-x-auto md:overflow-visible -mx-[var(--spacing-horizontal)] px-[var(--spacing-horizontal)] touch-pan-x">
+          <div class="flex gap-4 pb-4 flex-nowrap w-max">
+            <!-- Vinter -->
+            <div class="flex items-center justify-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical-m)] mt-auto badge badge-secondary border-neutral min-w-[96px]">
+              <div class="flex items-center gap-2">
+                <Text teksttype="Caption" weight="Bold">Vinter</Text>
+              </div>
+            </div>
+            <!-- Jul -->
+            <div class="flex items-center justify-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical-m)] mt-auto badge badge-secondary border-neutral min-w-[96px]">
+              <div class="flex items-center gap-2">
+                <Text teksttype="Caption" weight="Bold">Jul</Text>
+              </div>
+            </div>
+            <!-- Kæledyr -->
+            <div class="flex items-center justify-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical-m)] mt-auto badge badge-secondary border-neutral min-w-[96px]">
+              <div class="flex items-center gap-2">
+                <Text teksttype="Caption" weight="Bold">Kæledyr</Text>
+              </div>
+            </div>
+            <!-- Fantasi -->
+            <div class="flex items-center justify-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical-m)] mt-auto badge badge-secondary border-neutral min-w-[96px]">
+              <div class="flex items-center gap-2">
+                <Text teksttype="Caption" weight="Bold">Fantasi</Text>
+              </div>
+            </div>
+            <!-- Fantasivenner -->
+            <div class="flex items-center justify-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical-m)] mt-auto badge badge-secondary border-neutral min-w-[96px]">
+              <div class="flex items-center gap-2">
+                <Text teksttype="Caption" weight="Bold">Fantasivenner</Text>
+              </div>
+            </div>
+            <!-- Nordpolen -->
+            <div class="flex items-center justify-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical-m)] mt-auto badge badge-secondary border-neutral min-w-[96px]">
+              <div class="flex items-center gap-2">
+                <Text teksttype="Caption" weight="Bold">Nordpolen</Text>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -118,15 +106,11 @@ import Icon from "../components/Icon.astro";
           stylingclasses="mb-[var(--spacing-large)] max-w-[50%]"
           >Hilary Audus & Robin Shaw (Storbritannien, 2012)</Text
         >
+        <Text teksttype="Body" weight="Bold" stylingclasses="mb-[var(--spacing-vertical-xs)] md:max-w-[50%]">Instruktør</Text>
+        <Text teksttype="Body" stylingclasses="md:max-w-[50%]">Hilary Audus & Robin Shaw (Storbritannien, 2012)</Text>
       </div>
     </article>
-    <article>
-      <img
-        class="scale-70 right-[var(--spacing-horizontal)] bottom-[var(--spacing-vertical-m)] z-20"
-        src="/img/Popcorn.webp"
-        alt="Billede af figuren Poppi"
-      />
-    </article>
+    <img class="hidden scale-70 z-20 lg:block" src="/img/Popcorn.webp" alt="Billede af figuren Poppi" />
   </section>
   <!-- --------------Section: Karousel med "Film der minder om"--------------- -->
   <section class="mx-[var(--margin-side-large)]">
