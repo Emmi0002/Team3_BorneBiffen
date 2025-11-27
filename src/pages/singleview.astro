@@ -8,14 +8,26 @@ import Icon from "../components/Icon.astro";
 
 <MainLayout title="Titel">
   <!-- ---------------------Section: Herosection------------------------- -->
-  <section class="relative bg-[url('/img/Snemandenogsnehunden.webp')] bg-cover bg-center h-[80vh] mb-[var(--spacing-horizontal-l)] pb-[var(--spacing-horizontal-l)]">
+  <section
+    class="relative bg-[url('/img/Snemandenogsnehunden.webp')] bg-cover bg-center h-[80vh] mb-[var(--spacing-horizontal-l)] pb-[var(--spacing-horizontal-l)]"
+  >
     <!-- Horisontalt gradient-overlay: transparent (0%) til sort med 80% opacitet -->
-    <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);"></div>
+    <div
+      class="absolute inset-0"
+      style="background: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);"
+    >
+    </div>
 
-    <div class="relative z-10 max-w-6xl mx-auto h-full flex items-end justify-end mr-[var(--spacing-horizontal-l)] mb-[var(--spacing-horizontal-l)]">
+    <div
+      class="relative z-10 max-w-6xl mx-auto h-full flex items-end justify-end mr-[var(--spacing-horizontal-l)] mb-[var(--spacing-horizontal-l)]"
+    >
       <div class="text-right">
-        <Heading size="Large" weight="Ekstrabold" class="">Snemanden og <br />Snehunden</Heading>
-        <div class="flex items-center justify-end gap-3 mb-[var(--spacing-vertical-xs)]">
+        <Heading size="Large" weight="Ekstrabold" class=""
+          >Snemanden og <br />Snehunden</Heading
+        >
+        <div
+          class="flex items-center justify-end gap-3 mb-[var(--spacing-vertical-xs)]"
+        >
           <Heading size="Medium" weight="Light">24 min</Heading>
           <Icon imgDefault="/img/icons/clock-white.webp" size="xl" />
         </div>
@@ -24,43 +36,61 @@ import Icon from "../components/Icon.astro";
     </div>
   </section>
   <!-- ---------------------Section: Information om filmen------------------------- -->
-  <section class="grid grid-cols-[2fr_1fr] mx-[var(--margin-side-large)] mb-[var(--margin-sektioner-large)]">
+  <section
+    class="grid grid-cols-[2fr_1fr] mx-[var(--margin-side-large)] mb-[var(--margin-sektioner-large)]"
+  >
     <article>
-      <Heading size="Medium" stylingclasses="mb-[var(--spacing-vertical-xs)]">Mere om filmen</Heading>
+      <Heading size="Medium" stylingclasses="mb-[var(--spacing-vertical-xs)]"
+        >Mere om filmen</Heading
+      >
       <!-- Badges -->
-      <div class="flex gap-[var(--spacing-horizontal-xs)] mb-[var(--spacing-large)]">
+      <div
+        class="flex gap-[var(--spacing-horizontal-xs)] mb-[var(--spacing-large)]"
+      >
         <!-- Vinter -->
-        <div class="flex items-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical-m)] mt-auto badge badge-secondary border-neutral">
+        <div
+          class="flex items-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical-m)] mt-auto badge badge-secondary border-neutral"
+        >
           <div class="flex items-center gap-2 ml-auto">
             <Text teksttype="Caption" weight="Bold">Vinter</Text>
           </div>
         </div>
         <!-- Jul -->
-        <div class="flex items-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical-m)] mt-auto badge badge-secondary border-neutral">
+        <div
+          class="flex items-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical-m)] mt-auto badge badge-secondary border-neutral"
+        >
           <div class="flex items-center gap-2 ml-auto">
             <Text teksttype="Caption" weight="Bold">Jul</Text>
           </div>
         </div>
         <!-- Kæledyr -->
-        <div class="flex items-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical-m)] mt-auto badge badge-secondary border-neutral">
+        <div
+          class="flex items-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical-m)] mt-auto badge badge-secondary border-neutral"
+        >
           <div class="flex items-center gap-2 ml-auto">
             <Text teksttype="Caption" weight="Bold">Kæledyr</Text>
           </div>
         </div>
         <!-- Fantasi -->
-        <div class="flex items-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical-m)] mt-auto badge badge-secondary border-neutral">
+        <div
+          class="flex items-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical-m)] mt-auto badge badge-secondary border-neutral"
+        >
           <div class="flex items-center gap-2 ml-auto">
             <Text teksttype="Caption" weight="Bold">Fantasi</Text>
           </div>
         </div>
         <!-- Fantasivenner -->
-        <div class="flex items-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical-m)] mt-auto badge badge-secondary border-neutral">
+        <div
+          class="flex items-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical-m)] mt-auto badge badge-secondary border-neutral"
+        >
           <div class="flex items-center gap-2 ml-auto">
             <Text teksttype="Caption" weight="Bold">Fantasivenner</Text>
           </div>
         </div>
         <!-- Nordpolen -->
-        <div class="flex items-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical-m)] mt-auto badge badge-secondary border-neutral">
+        <div
+          class="flex items-center px-[var(--spacing-horizontal)] py-[var(--spacing-vertical-m)] mt-auto badge badge-secondary border-neutral"
+        >
           <div class="flex items-center gap-2 ml-auto">
             <Text teksttype="Caption" weight="Bold">Nordpolen</Text>
           </div>
@@ -68,21 +98,43 @@ import Icon from "../components/Icon.astro";
       </div>
       <!-- Beskrivelse -->
       <div>
-        <Text teksttype="Body" stylingclasses="mb-[var(--spacing-large)] max-w-[70%]"
-          >En lille dreng får sit livs julegave, da den snemand og snehund, han har bygget i sin baghave, bliver vakt til live. Sammen tager de på eventyr i vinterlandskabet og når helt til
-          snemandstræf på Nordpolen, hvor de endda møder Julemanden. Men kan magien vare ved til morgenstunden?</Text
+        <Text
+          teksttype="Body"
+          stylingclasses="mb-[var(--spacing-large)] max-w-[70%]"
+          >En lille dreng får sit livs julegave, da den snemand og snehund, han
+          har bygget i sin baghave, bliver vakt til live. Sammen tager de på
+          eventyr i vinterlandskabet og når helt til snemandstræf på Nordpolen,
+          hvor de endda møder Julemanden. Men kan magien vare ved til
+          morgenstunden?</Text
         >
-        <Text teksttype="Body" weight="Bold" stylingclasses="mb-[var(--spacing-vertical-xs)] max-w-[50%]">Instruktør</Text>
-        <Text teksttype="Body" stylingclasses="mb-[var(--spacing-large)] max-w-[50%]">Hilary Audus & Robin Shaw (Storbritannien, 2012)</Text>
+        <Text
+          teksttype="Body"
+          weight="Bold"
+          stylingclasses="mb-[var(--spacing-vertical-xs)] max-w-[50%]"
+          >Instruktør</Text
+        >
+        <Text
+          teksttype="Body"
+          stylingclasses="mb-[var(--spacing-large)] max-w-[50%]"
+          >Hilary Audus & Robin Shaw (Storbritannien, 2012)</Text
+        >
       </div>
     </article>
     <article>
-      <img class="scale-70 right-[var(--spacing-horizontal)] bottom-[var(--spacing-vertical-m)] z-20" src="/img/Popcorn.webp" alt="Billede af figuren Poppi" />
+      <img
+        class="scale-70 right-[var(--spacing-horizontal)] bottom-[var(--spacing-vertical-m)] z-20"
+        src="/img/Popcorn.webp"
+        alt="Billede af figuren Poppi"
+      />
     </article>
   </section>
   <!-- --------------Section: Karousel med "Film der minder om"--------------- -->
   <section class="mx-[var(--margin-side-large)]">
-    <Heading size="Small" weight="Bold" stylingclasses="mb-[var(--spacing-large)]">Film der minder om</Heading>
+    <Heading
+      size="Small"
+      weight="Bold"
+      stylingclasses="mb-[var(--spacing-large)]">Film der minder om</Heading
+    >
     <div class="gap-[var(--spacing-large)]">
       <div class="overflow-x-auto">
         <div class="flex gap-4 pb-4 flex-nowrap">
