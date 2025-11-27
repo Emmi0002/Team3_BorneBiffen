@@ -7,7 +7,7 @@ import HeaderNegative from "../components/HeaderNegative.astro";
 
 <MainLayout title="Børnebiffen - Listevisning">
   <HeaderNegative />
-  <main class="mt-10" style="background-image: url('/img/popcorn.webp'); background-repeat: no-repeat; background-position: right bottom; background-size: contain; background-attachment: fixed;">
+  <main class="mt-10">
     <div>
       <img src="/img/Popcorn.webp" alt="Popcorn Poppi" class="absolute overflow-x-hidden -right-25 top-25 h-full w-auto max-w-80 max-h-80 rotate-[-35deg] md:block hidden" />
     </div>
@@ -86,9 +86,7 @@ import HeaderNegative from "../components/HeaderNegative.astro";
           </label>
         </div>
       </div>
-      <article
-        class="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(220px,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-[var(--spacing-large)]"
-      >
+      <article class="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(220px,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-[var(--spacing-large)]">
         <Card
           imgSrc="/img/Snemandenogsnehunden.webp"
           imgAlt="Snemanden og Snehunden"
