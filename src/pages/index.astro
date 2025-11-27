@@ -23,41 +23,41 @@ import Header from "../components/Header.astro";
       <!-- Slides -->
       <div id="slide1" class="carousel-slide absolute inset-0 opacity-100 animate-slide1">
         <img src="/img/Mosterhero.webp" class="w-full h-full object-cover" />
-        <div class="absolute bottom-15 right-8 text-right text-[var(--color-text-label)] z-10">
-          <h3 class="text-xl font-bold mb-2">Min mosters historier - Den hvide hval</h3>
-          <p class="text-sm">10 min</p>
+        <div class="absolute bottom-15 right-8 text-right z-10">
+          <Heading htmlheading="h3" size="Small" weight="Bold" color="label" stylingclasses="mb-2">Min mosters historier - Den hvide hval</Heading>
+          <Text teksttype="Body" color="label">10 min</Text>
         </div>
       </div>
 
       <div id="slide2" class="carousel-slide absolute inset-0 opacity-0 animate-slide2">
         <img src="/img/Ritahero.webp" class="w-full h-full object-cover" />
-        <div class="absolute bottom-15 right-8 text-right text-[var(--color-text-label)] z-10">
-          <h3 class="text-xl font-bold mb-2">Rita og Krokodillen - Skovturen</h3>
-          <p class="text-sm">5 min</p>
+        <div class="absolute bottom-15 right-8 text-right z-10">
+          <Heading htmlheading="h3" size="Medium" weight="Bold" color="label" stylingclasses="mb-2">Rita og Krokodillen - Skovturen</Heading>
+          <Text teksttype="Body" color="label">5 min</Text>
         </div>
       </div>
 
       <div id="slide3" class="carousel-slide absolute inset-0 opacity-0 animate-slide3">
         <img src="/img/Villehero.webp" class="w-full h-full object-cover" />
-        <div class="absolute bottom-15 right-8 text-right text-[var(--color-text-label)] z-10">
-          <h3 class="text-xl font-bold mb-2">Ville og Vilde Kanin</h3>
-          <p class="text-sm">29 min</p>
+        <div class="absolute bottom-15 right-8 text-right z-10">
+          <Heading htmlheading="h3" size="Small" weight="Bold" color="label" stylingclasses="mb-2">Ville og Vilde Kanin</Heading>
+          <Text teksttype="Body" color="label">29 min</Text>
         </div>
       </div>
 
       <div id="slide4" class="carousel-slide absolute inset-0 opacity-0 animate-slide4">
         <img src="/img/vitellohero.webp" class="w-full h-full object-cover" />
-        <div class="absolute bottom-15 right-8 text-right text-[var(--color-text-label)] z-10">
-          <h3 class="text-xl font-bold mb-2">Vitello tigger en masse slik</h3>
-          <p class="text-sm">15 min</p>
+        <div class="absolute bottom-15 right-8 text-right z-10">
+          <Heading htmlheading="h3" size="Medium" weight="Bold" color="label" stylingclasses="mb-2">Vitello tigger en masse slik</Heading>
+          <Text teksttype="Body" color="label">15 min</Text>
         </div>
       </div>
 
       <div id="slide5" class="carousel-slide absolute inset-0 opacity-0 animate-slide5">
         <img src="/img/snudenhero.webp" class="w-full h-full object-cover" />
-        <div class="absolute bottom-15 right-8 text-right text-[var(--color-text-label)] z-10">
-          <h3 class="text-xl font-bold mb-2">Snuden rejser hjemmefra</h3>
-          <p class="text-sm">12 min</p>
+        <div class="absolute bottom-15 right-8 text-right z-10">
+          <Heading htmlheading="h3" size="Medium" weight="Bold" color="label" stylingclasses="mb-2">Snuden rejser hjemmefra</Heading>
+          <Text teksttype="Body" color="label">12 min</Text>
         </div>
       </div>
     </div>
@@ -73,7 +73,7 @@ import Header from "../components/Header.astro";
 
     <!-- Navigation indicators -->
     <div class="flex w-full justify-center gap-2 py-2 absolute bottom-2 z-30">
-      <span class="hero-nav-dot w-3 h-3 rounded-full bg-white transition-all duration-300 animate-dot1"></span>
+      <span class="hero-nav-dot w-3 h-3 rounded-full bg-white bg-opacity-50 transition-all duration-300 animate-dot1"></span>
       <span class="hero-nav-dot w-3 h-3 rounded-full bg-white bg-opacity-50 transition-all duration-300 animate-dot2"></span>
       <span class="hero-nav-dot w-3 h-3 rounded-full bg-white bg-opacity-50 transition-all duration-300 animate-dot3"></span>
       <span class="hero-nav-dot w-3 h-3 rounded-full bg-white bg-opacity-50 transition-all duration-300 animate-dot4"></span>
@@ -120,7 +120,7 @@ import Header from "../components/Header.astro";
 
       <div class="flex justify-between items-end mt-8 w-full">
         <Link href="#" class="text-sm text-base-100">Ny bruger?</Link>
-        <Button variant="primary" size="small">Log ind</Button>
+        <button class="btn btn-primary mt-4">Log ind</button>
       </div>
     </div>
   </section>
@@ -237,15 +237,7 @@ import Header from "../components/Header.astro";
             badge="Vinter"
             duration="24 min"
           />
-          <Card
-            imgSrc="/img/Snemanden.webp"
-            imgAlt="Snemanden"
-            title="Snemanden"
-            body="En snemand bliver på magisk vis vakt til live i denne smukke, ordløse animationsfilm om barndommens idyl."
-            badgestate="true"
-            badge="Vinter"
-            duration="25 min"
-          />
+          <Card imgSrc="/img/Snemanden.webp" imgAlt="Snemanden" title="Snemanden" body="En snemand bliver på magisk vis vakt til live i denne smukke, ordløse animationsfilm om barndommens idyl." badgestate="true" badge="Vinter" duration="25 min" />
         </div>
       </div>
 
@@ -272,33 +264,9 @@ import Header from "../components/Header.astro";
             badge="Dyr"
             duration="5 min"
           />
-          <Card
-            imgSrc="/img/VilleogVildeKanin.webp"
-            imgAlt="Ville og Vilde Kanin"
-            title="Ville og Vilde Kanin"
-            body="Ville er en lille hvid kanin, der bor i et bur på en bondegård."
-            badgestate="true"
-            badge="Dyr"
-            duration="29 min"
-          />
-          <Card
-            imgSrc="/img/Snuden.webp"
-            imgAlt="Snuden"
-            title="Snuden rejser hjemmefra"
-            body="Snuden er et hemmeligt og fredeligt dyr, der lever i sin grønne mose."
-            badgestate="true"
-            badge="Dyr"
-            duration="17 min"
-          />
-          <Card
-            imgSrc="/img/LilleFro.webp"
-            imgAlt="Lille Frø"
-            title="Lille Frø"
-            body="Lille Frøs ankomst i den lille frøfamilie er lige så eksplosiv."
-            badgestate="true"
-            badge="Dyr"
-            duration="8 min"
-          />
+          <Card imgSrc="/img/VilleogVildeKanin.webp" imgAlt="Ville og Vilde Kanin" title="Ville og Vilde Kanin" body="Ville er en lille hvid kanin, der bor i et bur på en bondegård." badgestate="true" badge="Dyr" duration="29 min" />
+          <Card imgSrc="/img/Snuden.webp" imgAlt="Snuden" title="Snuden rejser hjemmefra" body="Snuden er et hemmeligt og fredeligt dyr, der lever i sin grønne mose." badgestate="true" badge="Dyr" duration="17 min" />
+          <Card imgSrc="/img/LilleFro.webp" imgAlt="Lille Frø" title="Lille Frø" body="Lille Frøs ankomst i den lille frøfamilie er lige så eksplosiv." badgestate="true" badge="Dyr" duration="8 min" />
         </div>
       </div>
 
@@ -325,15 +293,7 @@ import Header from "../components/Header.astro";
             badge="Magi"
             duration="24 min"
           />
-          <Card
-            imgSrc="/img/Snemanden.webp"
-            imgAlt="Snemanden"
-            title="Snemanden"
-            body="En snemand bliver på magisk vis vakt til live i denne smukke animationsfilm."
-            badgestate="true"
-            badge="Magi"
-            duration="25 min"
-          />
+          <Card imgSrc="/img/Snemanden.webp" imgAlt="Snemanden" title="Snemanden" body="En snemand bliver på magisk vis vakt til live i denne smukke animationsfilm." badgestate="true" badge="Magi" duration="25 min" />
           <Card
             imgSrc="/img/Vitellomodergud.webp"
             imgAlt="Vitello møder gud"
