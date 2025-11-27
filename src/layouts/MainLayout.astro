@@ -8,20 +8,91 @@ const { title } = Astro.props;
 <html lang="da" data-theme="BoerneBiffen">
   <head>
     <meta charset="utf-8" />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="/img/icons/favicon/PoppiPopcorn.ico"
-    />
+    <link rel="icon" type="image/x-icon" href="/img/icons/favicon/PoppiPopcorn.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{Astro.props.title}</title>
-    <script
-      defer
-      src="https://unpkg.com/tailwindcss-intersect@2.x.x/dist/observer.min.js"
-    ></script>
+    <script defer src="https://unpkg.com/tailwindcss-intersect@2.x.x/dist/observer.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+      /* skjul indtil Alpine er klar */
+      [x-cloak] {
+        display: none !important;
+      }
+      /* bevaret modal-styles (fra dit tidligere script) */
+      .loginmodal-container {
+        padding: 30px;
+        max-width: 350px;
+        width: 100% !important;
+        background-color: #f7f7f7;
+        margin: 0 auto;
+        border-radius: 2px;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+      }
+      .loginmodal-container h1 {
+        text-align: center;
+        font-size: 1.8em;
+      }
+      .loginmodal-container input[type="submit"] {
+        width: 100%;
+        display: block;
+        margin-bottom: 10px;
+        position: relative;
+      }
+      input[type="password"] {
+        height: 44px;
+        font-size: 16px;
+        width: 100%;
+        margin-bottom: 10px;
+        -webkit-appearance: none;
+        background: #fff;
+        border: 1px solid #d9d9d9;
+        border-top: 1px solid #c0c0c0;
+        padding: 0 8px;
+        box-sizing: border-box;
+      }
+      input[type="password"]:hover {
+        border: 1px solid #b9b9b9;
+        border-top: 1px solid #a0a0a0;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+      }
+      .loginmodal-submit {
+        border: 0px;
+        color: #fff;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+        background-color: #4d90fe;
+        padding: 17px 0px;
+        font-size: 14px;
+      }
+      .loginmodal-submit:hover {
+        background-color: #357ae8;
+      }
+    </style>
   </head>
   <body class="bg-base-200 pt-24 md:overflow-x-hidden">
+    <!-- Alpine-styret login modal -->
+    <div
+      x-data="{ open: !localStorage.getItem('iform-totally-logged-in'), pass: '', login() { if (this.pass === 'kea') { localStorage.setItem('iform-totally-logged-in','true'); this.open = false } else { this.pass = '' } } }"
+      x-cloak
+    >
+      <div x-show="open" x-transition class="fixed inset-0 z-50 flex items-center justify-center" aria-hidden="true">
+        <div class="absolute inset-0 bg-black/80"></div>
+        <div class="relative z-50 p-4 w-full max-w-sm">
+          <div class="loginmodal-container">
+            <h1>Login</h1><br />
+            <p>This is a school project</p>
+            <p>The password is <code>kea</code></p>
+            <form @submit.prevent="login">
+              <input x-model="pass" type="password" name="pass" placeholder="Password" />
+              <input type="submit" class="loginmodal-submit" value="Login" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <slot />
 
     <Footer />
