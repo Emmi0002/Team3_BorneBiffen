@@ -1,0 +1,115 @@
+---
+import Heading from "./Heading.astro";
+import Card from "./Card.astro";
+
+const { Overskrift = "Overskrift til sektionen" } = Astro.props;
+---
+
+<section class="mx-[var(--margin-side-small)] lg:mx-[var(--margin-side-large)]">
+  <Heading size="Small" weight="Bold" stylingclasses="mb-[var(--spacing-large)]">{Overskrift}</Heading>
+  <div class="gap-[var(--spacing-large)]">
+    <div class="overflow-x-auto">
+      <div class="flex gap-4 pb-4 flex-nowrap">
+        <!-- Card 1 -->
+        <div class="">
+          <Card
+            imgSrc="/img/Snemandenogsnehunden.webp"
+            imgAlt="Snemanden og Snehunden"
+            title="Snemanden og Snehunden"
+            body="En lille dreng får sit livs julegave, da den snemand og snehund, han har bygget i sin baghave, bliver vakt til live. Sammen tager de på eventyr i vinterlandskabet og når helt til snemandstræf på Nordpolen, hvor de endda møder Julemanden. Men kan magien vare ved til morgenstunden?"
+            badgestate="true"
+            badge="Vinter"
+            duration="24 min"
+          />
+        </div>
+
+        <!-- Card 2 -->
+        <div class="">
+          <Card
+            imgSrc="/img/Sandkassen6-26-Snemanden.webp"
+            imgAlt="Sandkassen 6:26 - Snemanden"
+            title="Sandkassen 6:26 - Snemanden"
+            body="Det er blevet koldt i sandkassen, og Bror og Marie leger i sneen. Bror forsvinder i sneen, og Marie møder en snemand, der kan tale. Er der noget inde i snemanden?"
+            badgestate="true"
+            badge="Vinter"
+            duration="3 min"
+          />
+        </div>
+
+        <!-- Card 3 -->
+        <div class="">
+          <Card
+            imgSrc="/img/Snemanden.webp"
+            imgAlt="Snemanden"
+            title="Snemanden"
+            body="En snemand bliver på magisk vis vakt til live i denne smukke, ordløse animationsfilm om barndommens idyl og fantasiens glæder. En lille dreng opdager til sin forundring, at den snemand, han har bygget i sin baghave, er blevet levende. En eventyrlig nat med sjove påfund og leg i vinterlandskabet følger."
+            badgestate="true"
+            badge="Vinter"
+            duration="25 min"
+          />
+        </div>
+
+        <!-- Card 4 -->
+        <div class="">
+          <Card
+            imgSrc="/img/VilleogVildeKanin.webp"
+            imgAlt="Ville og Vilde Kanin"
+            title="Ville og Vilde Kanin"
+            body="Ville er en lille hvid kanin, der bor i et bur på en bondegård, hvor han har det godt og trygt. Men en dag er buret ikke blevet låst, og Ville falder ud. Skal han kravle op igen, eller skal han hellere hoppe ud og se, hvordan der er ude i skoven?"
+            badgestate="true"
+            badge="Venskab"
+            duration="29 min"
+          />
+        </div>
+        <!-- Card 5 -->
+        <div class="">
+          <Card
+            title="Snuden rejser hjemmefra"
+            imgSrc="/img/Snuden.webp"
+            imgAlt="Snuden rejser hjemmefra"
+            body="Snuden er et hemmeligt og fredeligt dyr, der lever i sin grønne mose. Her er han ven med alle dyr. En dag vil en jæger skyde hans bedste ven, odderen Otto, og Snuden beslutter at opklare, hvorfor mennesker er så tossede. Han forlader mosen og møder en menneske-pige, som bor i den store by. På et værtshus spiser en bisse. Den sultne Snude snupper bøffen, og så bliver der slagsmål. Snuden vakler ud i den mørke nat. Kæmperotten Rita tager sig af den forkomne Snude."
+            badgestate="true"
+            badge="Eventyr"
+            duration="17 min"
+          />
+        </div>
+        <!-- Card 6 -->
+        <div class="">
+          <Card
+            imgSrc="/img/Vitellobliverforretningsmand.webp"
+            imgAlt="Vitello bliver forretningsmand"
+            title="Vitello bliver forretningsmand"
+            body="I fjernsynet hører Vitello om en smart fyr der har tjent en million kroner. Han har tjent dem ved at være en forretningsmand der køber billigt og sælger dyrt. Vitello og hans venner vil også gerne tjene en million kroner. De skal bare lige finde noget der er billigt…"
+            badgestate="true"
+            badge="Vitello"
+            duration="7 min"
+          />
+        </div>
+        <!-- Card 7 -->
+        <div class="">
+          <Card
+            imgSrc="/img/Vitellomodergud.webp"
+            imgAlt="Vitello møder gud"
+            title="Vitello møder gud"
+            body="Vitello har en af de dage hvor det ikke er så sjovt at være Vitello og ikke at have nogen far. Men så møder han en gammel mand med et meget stort hvidt skæg. Han sidder med en øl på en bænk ved centered. Vitello kender kun to gamle mænd med så store hvide skæg. Gud og Julemanden. Og det er ikke jul. Og Gud kan som bekendt få alting til at ske, alt I hele verden…"
+            badgestate="true"
+            badge="Vitello"
+            duration="7 min"
+          />
+        </div>
+        <!-- Card 8 -->
+        <div class="">
+          <Card
+            title="Rita og Krokodille: Skovturen"
+            imgSrc="/img/Rita.webp"
+            imgAlt="Rita og Krokodille: Skovturen"
+            body="Vennerne skal ud og samle kastanjer i skoven. Rita formaner Krokodille at blive på stien, så han ikke farer vild. Men da hun ser et helt tæppe af glitrende kastajner glemmer hun alt, hvad hun har sagt. I jagten på de flotte kastajner glemmer hun alt om stien og farer vild. Krokodille hjælper hende at finde tilbage."
+            badgestate="true"
+            badge="Venskab"
+            duration="5 min"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
